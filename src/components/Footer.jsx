@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { Mail, Phone, Clock } from 'lucide-react';
 
 export default function Footer() {
-  const mapsUrl = 'https://maps.google.com/?q=Almacura+Clinic+%26+Institute,+Secunderabad,+Hyderabad';
 
   return (
     <footer className="bg-brand-navy border-t border-white/10">
@@ -100,24 +99,7 @@ export default function Footer() {
               </li>
             </ul>
 
-            <div className="mt-6 rounded-xl overflow-hidden border border-white/10 bg-white/5">
-              <iframe
-                title="Almacura Clinic Location"
-                src="https://www.google.com/maps?q=Almacura+Clinic+%26+Institute,+Secunderabad,+Hyderabad&output=embed"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-44"
-                allowFullScreen
-              />
-            </div>
-            <a
-              href={mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-block text-xs uppercase tracking-widest text-brand-teal hover:text-white transition-colors"
-            >
-              Open in Google Maps
-            </a>
+
           </div>
         </div>
 

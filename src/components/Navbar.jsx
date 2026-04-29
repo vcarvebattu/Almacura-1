@@ -5,12 +5,11 @@ import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', path: '/' },
-  { name: 'Integrative Medicine', path: '/integrative-medicine' },
-  { name: 'Healthspan', path: '/healthspan-optimization' },
-  { name: 'Therapies', path: '/therapies' },
+  { name: 'About', path: '/about' },
   { name: 'Programs', path: '/programs' },
-  { name: 'For Doctors', path: '/for-doctors' },
-  { name: 'About', path: '/about' }
+  { name: 'Therapies', path: '/therapies' },
+  { name: 'Functional Gynaecology', path: '/functional-gynaecology' },
+  { name: 'Contact', path: '/contact' }
 ];
 
 export default function Navbar() {
@@ -47,13 +46,11 @@ export default function Navbar() {
         className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-sm sm:bg-transparent sm:backdrop-blur-none"
       >
         {/* Top Bar - Administrative & Mission */}
-        <div className="bg-brand-navy text-white/40 py-1.5 px-8 hidden sm:block border-b border-white/5 pointer-events-auto">
+        <div className="bg-brand-navy text-white/60 py-2 px-8 hidden sm:block border-b border-brand-teal/20 pointer-events-auto shadow-sm shadow-brand-navy/5">
           <div className="max-w-[1440px] mx-auto flex justify-between items-center">
-            <span className="text-[8px] font-bold tracking-[0.4em] uppercase">Institute of Integrative Medicine & Healthspan Optimisation</span>
+            <span className="text-[9px] font-dm font-bold tracking-[0.3em] uppercase">Institute of Integrative Medicine, Healthspan Optimisation & Functional Gynaecology</span>
             <div className="flex gap-6 items-center">
-              <span className="text-[8px] font-bold tracking-[0.4em] uppercase">Hyderabad</span>
-              <span className="h-3 w-[1px] bg-white/10"></span>
-              <span className="text-[8px] font-bold tracking-[0.4em] uppercase">2025 PROTOCOL</span>
+              <span className="text-[9px] font-dm font-bold tracking-[0.3em] uppercase text-brand-teal">Hyderabad</span>
             </div>
           </div>
         </div>
@@ -88,38 +85,17 @@ export default function Navbar() {
               {/* Nav Links - Right-aligned */}
               <div className="hidden lg:flex items-center gap-12">
                 <nav className="flex items-center gap-9">
-                  <Link 
-                    to="/integrative-medicine" 
-                    className={`font-dm text-[11px] font-bold tracking-[0.2em] uppercase transition-all flex items-center h-10 ${
-                      location.pathname === '/integrative-medicine' ? 'text-brand-teal' : 'text-brand-navy/60 hover:text-brand-teal'
-                    }`}
-                  >
-                    Integrative Medicine
-                  </Link>
-                  <Link 
-                    to="/healthspan-optimization" 
-                    className={`font-dm text-[11px] font-bold tracking-[0.2em] uppercase transition-all flex items-center h-10 ${
-                      location.pathname === '/healthspan-optimization' ? 'text-brand-teal' : 'text-brand-navy/60 hover:text-brand-teal'
-                    }`}
-                  >
-                    Healthspan
-                  </Link>
-                  <Link 
-                    to="/therapies" 
-                    className={`font-dm text-[11px] font-bold tracking-[0.2em] uppercase transition-all flex items-center h-10 ${
-                      location.pathname === '/therapies' ? 'text-brand-teal' : 'text-brand-navy/60 hover:text-brand-teal'
-                    }`}
-                  >
-                    Therapies
-                  </Link>
-                  <Link 
-                    to="/for-doctors" 
-                    className={`font-dm text-[11px] font-bold tracking-[0.2em] uppercase transition-all flex items-center h-10 ${
-                      location.pathname === '/for-doctors' ? 'text-brand-teal' : 'text-brand-navy/60 hover:text-brand-teal'
-                    }`}
-                  >
-                    For Doctors
-                  </Link>
+                  {navLinks.slice(1, 5).map((link) => (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className={`font-dm text-[11px] font-bold tracking-[0.2em] uppercase transition-all flex items-center h-10 ${
+                        location.pathname === link.path ? 'text-brand-teal' : 'text-brand-navy/60 hover:text-brand-teal'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
                 </nav>
                 
                 <Link to="/contact" className="flex items-center h-10">
@@ -128,7 +104,7 @@ export default function Navbar() {
                     whileTap={{ scale: 0.95 }}
                     className="bg-brand-navy text-white px-8 py-3 rounded-full font-dm font-bold text-[11px] tracking-[0.2em] uppercase shadow-lg shadow-brand-navy/10 hover:shadow-brand-teal/20 hover:bg-brand-teal transition-all h-full flex items-center justify-center min-w-[140px]"
                   >
-                    Book Now
+                    Book Consultation
                   </motion.button>
                 </Link>
               </div>
@@ -219,12 +195,12 @@ export default function Navbar() {
                       whileTap={{ scale: 0.95 }}
                       className="w-full py-4 bg-brand-navy text-white font-dm font-bold uppercase tracking-[0.2em] text-[10px] rounded-full shadow-xl shadow-brand-navy/10 transition-all"
                     >
-                      Book Prime Consultation
+                      Book Consultation
                     </motion.button>
                   </Link>
                   <div className="flex flex-col items-center gap-2 mt-6 opacity-40 font-dm text-[8px] uppercase tracking-widest font-bold text-brand-navy">
-                    <span>Direct: +91 91234 56789</span>
-                    <span>@Almacura.Hyd</span>
+                    <span>Direct: +91 99890 33686</span>
+                    <span>doctorkvsreddy@yahoo.com</span>
                   </div>
                 </motion.div>
 
@@ -243,29 +219,6 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* REFINED "Back to Hub" Button - Top Left position for better UX */}
-      {location.pathname !== '/' && (
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="fixed top-28 left-6 sm:left-12 z-[50]"
-        >
-          <Link to="/">
-            <motion.button
-              whileHover={{ scale: 1.05, x: 5 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-3 bg-white/70 backdrop-blur-xl border border-brand-teal/10 pl-3 pr-6 py-2.5 rounded-full shadow-xl shadow-brand-navy/5 hover:border-brand-teal/30 transition-all group pointer-events-auto"
-            >
-              <div className="w-7 h-7 rounded-full bg-brand-teal/10 flex items-center justify-center text-brand-teal group-hover:bg-brand-teal group-hover:text-white transition-colors">
-                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-              </div>
-              <span className="font-dm font-bold text-[9px] uppercase tracking-[0.2em] text-brand-navy opacity-80 group-hover:opacity-100 transition-opacity">Back to Hub</span>
-            </motion.button>
-          </Link>
-        </motion.div>
-      )}
     </>
   );
 }

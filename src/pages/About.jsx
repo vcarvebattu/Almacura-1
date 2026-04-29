@@ -1,137 +1,203 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Activity, ShieldCheck, Microscope, HeartPulse, Sparkles, ChevronRight, MessageCircle, MapPin, Target, Zap } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import ScrollReveal from '../components/ScrollReveal';
-import SectionLabel from '../components/SectionLabel';
+import { Shield, Heart, Activity, Leaf, CheckCircle, ArrowRight } from 'lucide-react';
 
 export default function About() {
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: "-100px" },
+    transition: { duration: 0.8, ease: "easeOut" }
+  };
+
   return (
-    <div className="bg-brand-white pt-32 pb-24 px-6 sm:px-8 md:px-12">
-      <div className="max-w-7xl mx-auto">
-        {/* Hero Section */}
-        <ScrollReveal variant="fadeUp">
-          <div className="flex flex-col items-center text-center mb-24 max-w-[900px] mx-auto">
-            <SectionLabel>INSTITUTIONAL PROFILE</SectionLabel>
-            <h1 className="font-dm text-[clamp(44px,8vw,80px)] leading-[0.95] text-brand-navy font-bold tracking-tight mb-8">
-              Almacura <br className="hidden md:block" /> Center & Institute
-            </h1>
-            <p className="text-brand-muted text-xl leading-relaxed italic max-w-2xl font-cormorant border-l-4 border-brand-teal/20 pl-8">
-              "30+ years of medical expertise combined with advanced therapy integration."
+    <main className="w-full pt-32 pb-24 min-h-screen bg-brand-beige">
+      {/* Hero Section */}
+      <section className="relative px-4 sm:px-8 max-w-[1440px] mx-auto mb-24">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-4xl mx-auto"
+        >
+          <span className="font-dm text-[11px] font-bold tracking-[0.3em] text-brand-teal uppercase mb-4 block">
+            Our Institute
+          </span>
+          <h1 className="font-cormorant text-5xl md:text-7xl font-bold text-brand-navy mb-8">
+            About <span className="italic text-brand-teal">ALMACURA</span>
+          </h1>
+          <p className="font-dm text-xl text-brand-text leading-relaxed">
+            ALMACURA is a clinical institute dedicated to restoring health, enhancing vitality, and improving quality of life through a structured model integrating:
+          </p>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 max-w-5xl mx-auto"
+        >
+          {[
+            { title: 'Modern Clinical Medicine', icon: Shield },
+            { title: 'Integrative Therapeutic Approaches', icon: Heart },
+            { title: 'Healthspan Optimisation', icon: Activity },
+            { title: 'Functional & Regenerative Gynaecology', icon: Leaf }
+          ].map((item, i) => (
+            <div key={i} className="bg-white rounded-[2rem] p-6 text-center border border-brand-teal/10 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-brand-ice rounded-xl flex items-center justify-center mx-auto mb-4 text-brand-teal">
+                <item.icon className="w-6 h-6" />
+              </div>
+              <h3 className="font-dm text-sm font-bold text-brand-navy leading-relaxed">{item.title}</h3>
+            </div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* Sections Grid */}
+      <section className="px-4 sm:px-8 max-w-[1440px] mx-auto space-y-24">
+        
+        {/* Integrative Medicine & Yoga */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <motion.div {...fadeInUp} className="bg-white p-12 rounded-[2.5rem] border border-brand-teal/10 shadow-lg shadow-brand-navy/5">
+            <h2 className="font-cormorant text-4xl font-bold text-brand-navy mb-6">Integrative Medicine</h2>
+            <p className="font-dm text-lg text-brand-text mb-6">
+              At ALMACURA, integrative medicine builds upon conventional treatment.
             </p>
-          </div>
-        </ScrollReveal>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" />
+                <span className="font-dm text-brand-text">Conventional care is the foundation</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" />
+                <span className="font-dm text-brand-text">Additional therapies enhance recovery</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-brand-teal shrink-0 mt-0.5" />
+                <span className="font-dm text-brand-text">Multiple modalities are combined in a structured manner</span>
+              </li>
+            </ul>
+          </motion.div>
 
-        {/* Core Profile */}
-        <section className="mb-32">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-            <ScrollReveal>
-              <div className="relative group">
-                <div className="absolute inset-0 bg-brand-ice rounded-[50px] rotate-3 group-hover:rotate-0 transition-transform duration-700" />
-                <img 
-                  src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80" 
-                  alt="Almacura Institute" 
-                  className="relative rounded-[45px] shadow-2xl transition-all duration-700 h-[600px] object-cover"
-                />
-                <div className="absolute top-10 left-10 bg-white/10 backdrop-blur-3xl border border-white/20 p-8 rounded-[35px] text-white">
-                  <div className="font-cormorant text-5xl font-bold italic mb-2">30+</div>
-                  <div className="font-dm text-[9px] uppercase tracking-widest font-bold">Years Clinical Expertise</div>
-                </div>
+          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="bg-brand-navy text-white p-12 rounded-[2.5rem] relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-teal/20 blur-[50px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
+            <div className="relative z-10">
+              <h2 className="font-cormorant text-4xl font-bold mb-6">Core Component – Yoga Therapy</h2>
+              <p className="font-dm text-lg text-white/80 mb-6">
+                Yoga therapy plays a central role in:
+              </p>
+              <ul className="space-y-4 mb-8">
+                {['Improving physiological balance', 'Regulating stress', 'Supporting recovery', 'Enhancing long-term resilience'].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-brand-gold mt-2 shrink-0"></div>
+                    <span className="font-dm text-white/90">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="pt-8 border-t border-white/10">
+                <h3 className="font-dm text-sm font-bold uppercase tracking-wider text-brand-gold mb-4">Supportive Modalities</h3>
+                <p className="font-dm text-white/80 text-sm">
+                  In selected cases, Ayurvedic therapies and Homeopathy may be incorporated as complementary approaches within a clinical framework.
+                </p>
               </div>
-            </ScrollReveal>
+            </div>
+          </motion.div>
+        </div>
 
-            <div className="space-y-12">
-              <div>
-                <SectionLabel>ESTABLISHED EXPERTISE</SectionLabel>
-                <h2 className="font-cormorant text-4xl sm:text-5xl text-brand-navy mt-4 mb-8">Multi-specialty hospital background</h2>
-                <div className="space-y-6 text-brand-muted text-lg leading-loose mb-10">
-                  <p>Almacura is founded on the principles of integrated clinical medicine. Led by Dr. Vijay Shekar Reddy (MBBS, MS - General Surgery), the institute reflects a deep clinical heritage from multi-specialty hospital backgrounds.</p>
-                  <p>Our focus is integrating modern, advanced therapies (HBOT, Ozone, IV Nutrient, Hydrogen, Red Light, Acupuncture) into a cohesive pathway that addresses both clinical disease and long-term vitality.</p>
+        {/* Functional Gynaecology & Conditions */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <motion.div {...fadeInUp} className="order-2 lg:order-1">
+            <h2 className="font-cormorant text-4xl font-bold text-brand-navy mb-8">Conditions Addressed</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                'Cardiovascular disease', 'Diabetes', 'Chronic fatigue', 'Chronic pain', 
+                'Allergic & inflammatory disorders', 'Autoimmune disorders', 'Neurological disorders', 'Stress-related disorders'
+              ].map((condition, i) => (
+                <div key={i} className="bg-white p-4 rounded-xl border border-brand-teal/5 flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-brand-teal"></div>
+                  <span className="font-dm text-sm font-medium text-brand-text">{condition}</span>
                 </div>
-              </div>
+              ))}
+            </div>
+          </motion.div>
 
-              <div className="grid grid-cols-1 gap-6">
-                {[
-                  { title: 'Integrating modern & advanced therapies', icon: Zap },
-                  { title: 'Evidence-informed clinical protocols', icon: ShieldCheck },
-                  { title: 'Expert physician oversight & supervision', icon: Activity }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-6 p-6 bg-brand-ice/50 rounded-3xl border border-transparent hover:border-brand-teal/20 hover:bg-white hover:shadow-xl hover:shadow-brand-navy/5 transition-all group">
-                    <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-brand-teal group-hover:bg-brand-teal group-hover:text-white transition-all shadow-sm">
-                      <item.icon size={20} />
-                    </div>
-                    <span className="font-dm font-bold text-[10px] uppercase tracking-widest text-brand-navy leading-none">{item.title}</span>
+          <motion.div {...fadeInUp} className="bg-brand-ice p-12 rounded-[2.5rem] border border-brand-teal/10 order-1 lg:order-2">
+            <h2 className="font-cormorant text-4xl font-bold text-brand-navy mb-6">Functional & Regenerative Gynaecology</h2>
+            <p className="font-dm text-lg text-brand-text mb-8">
+              ALMACURA offers non-surgical, function-oriented approaches to women's health.
+            </p>
+            <h3 className="font-dm text-sm font-bold uppercase tracking-wider text-brand-teal mb-4">Focus Areas</h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {[
+                'Hormonal balance', 'Menopause management', 'Pelvic floor health',
+                'Sexual wellness', 'Vaginal rejuvenation', 'Post-delivery recovery'
+              ].map((area, i) => (
+                <li key={i} className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-brand-gold" />
+                  <span className="font-dm text-sm text-brand-navy">{area}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="bg-white p-6 rounded-2xl border border-brand-teal/5">
+              <p className="font-dm text-sm font-bold text-brand-navy">
+                <span className="text-brand-teal uppercase tracking-wider block text-xs mb-1">Goal</span>
+                To improve function, comfort, and quality of life.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Healthspan & Philosophy */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <motion.div {...fadeInUp} className="bg-white p-12 rounded-[2.5rem] border border-brand-teal/10 shadow-lg shadow-brand-navy/5">
+            <h2 className="font-cormorant text-4xl font-bold text-brand-navy mb-6">Healthspan Optimisation</h2>
+            <p className="font-dm text-lg text-brand-text mb-6">Focuses on:</p>
+            <ul className="grid grid-cols-2 gap-4 mb-8">
+              {[
+                { title: 'Early detection', icon: '🔍' },
+                { title: 'Metabolic correction', icon: '⚖️' },
+                { title: 'Energy enhancement', icon: '⚡' },
+                { title: 'Disease prevention', icon: '🛡️' }
+              ].map((item, i) => (
+                <li key={i} className="bg-brand-light p-4 rounded-xl flex items-center gap-3">
+                  <span className="text-xl">{item.icon}</span>
+                  <span className="font-dm text-sm font-bold text-brand-navy">{item.title}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <div className="pt-8 border-t border-brand-teal/10">
+              <h3 className="font-dm text-sm font-bold uppercase tracking-wider text-brand-teal mb-4">Model of Care</h3>
+              <div className="flex flex-wrap gap-2 items-center text-xs font-dm font-bold text-brand-navy bg-brand-light p-4 rounded-xl">
+                Treatment <ArrowRight className="w-3 h-3 text-brand-teal" /> 
+                Recovery <ArrowRight className="w-3 h-3 text-brand-teal" /> 
+                Restoration <ArrowRight className="w-3 h-3 text-brand-teal" /> 
+                Regeneration <ArrowRight className="w-3 h-3 text-brand-teal" /> 
+                Optimisation <ArrowRight className="w-3 h-3 text-brand-teal" /> 
+                Healthspan
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="flex items-center h-full">
+            <div className="w-full text-center lg:text-left">
+              <h2 className="font-cormorant text-4xl md:text-5xl font-bold text-brand-navy mb-8">Our Philosophy</h2>
+              <p className="font-dm text-2xl text-brand-teal italic mb-10 max-w-xl mx-auto lg:mx-0">
+                "We aim to treat root causes, restore function, enhance vitality, and support healthy aging."
+              </p>
+              
+              <div className="grid grid-cols-2 gap-6 max-w-xl mx-auto lg:mx-0">
+                {['Treat root causes', 'Restore function', 'Enhance vitality', 'Support healthy aging'].map((goal, i) => (
+                  <div key={i} className="border-b border-brand-teal/20 pb-4">
+                    <span className="font-dm text-lg font-bold text-brand-navy">{goal}</span>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
-        </section>
+          </motion.div>
+        </div>
 
-        {/* Vision Section */}
-        <section className="py-24 px-10 sm:px-16 bg-brand-navy rounded-[60px] text-white overflow-hidden relative mb-32">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(11,110,110,0.3),transparent_50%)]" />
-          <div className="relative z-10 max-w-4xl mx-auto text-center">
-            <ScrollReveal>
-              <SectionLabel className="text-white/40">OUR FUTURE</SectionLabel>
-              <h2 className="font-cormorant text-4xl sm:text-6xl text-white mt-4 mb-8">Our Vision</h2>
-              <p className="text-white/60 text-xl font-cormorant italic leading-relaxed mb-12">
-                "To become India’s leading integrative medicine network, delivering healthspan optimization through precision science and clinical excellence."
-              </p>
-              <div className="h-0.5 w-24 bg-brand-teal/30 mx-auto mb-12" />
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-                <div>
-                  <div className="font-dm text-3xl font-bold italic text-brand-teal mb-2">Expansion</div>
-                  <div className="font-dm text-[9px] uppercase tracking-widest text-white/40">Scalable Network Model</div>
-                </div>
-                <div>
-                  <div className="font-dm text-3xl font-bold italic text-brand-teal mb-2">Innovation</div>
-                  <div className="font-dm text-[9px] uppercase tracking-widest text-white/40">Next-gen Bio-tech</div>
-                </div>
-                <div>
-                  <div className="font-dm text-3xl font-bold italic text-brand-teal mb-2">Outcome</div>
-                  <div className="font-dm text-[9px] uppercase tracking-widest text-white/40">Validated Results</div>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </section>
-
-        {/* Contact/Location Bar */}
-        <section className="py-12 bg-white rounded-[40px] border border-brand-ice shadow-xl shadow-brand-navy/5 px-10 sm:px-16 flex flex-col md:grid md:grid-cols-3 gap-12 items-center">
-          <div className="flex items-center gap-6 group">
-            <div className="w-12 h-12 rounded-2xl bg-brand-ice flex items-center justify-center text-brand-teal group-hover:bg-brand-teal group-hover:text-white transition-all shadow-sm">
-              <MapPin size={24} />
-            </div>
-            <div>
-              <div className="font-dm text-[11px] uppercase tracking-widest text-brand-teal font-bold mb-1">Maps</div>
-              <a
-                href="https://maps.google.com/?q=Secunderabad%2C+Hyderabad"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-dm font-bold text-xs uppercase tracking-widest text-brand-navy underline hover:text-brand-teal transition-colors"
-              >
-                Open in Google Maps
-              </a>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-6 group">
-            <div className="w-12 h-12 rounded-2xl bg-brand-ice flex items-center justify-center text-brand-teal group-hover:bg-brand-teal group-hover:text-white transition-all shadow-sm">
-              <HeartPulse size={24} />
-            </div>
-            <div>
-              <div className="font-dm text-[11px] uppercase tracking-widest text-brand-teal font-bold mb-1">Our Approach</div>
-              <div className="font-dm font-bold text-xs uppercase tracking-widest text-brand-navy">Patient Focused</div>
-            </div>
-          </div>
-
-          <Link to="/contact" className="w-full">
-            <button className="w-full py-5 bg-brand-navy text-white rounded-3xl font-dm font-bold text-[11px] uppercase tracking-[.3em] hover:bg-brand-teal transition-all shadow-xl shadow-brand-navy/10 flex items-center justify-center gap-3">
-              Book Appointment <ArrowRight size={16} />
-            </button>
-          </Link>
-        </section>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
