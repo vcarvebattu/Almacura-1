@@ -50,7 +50,7 @@ export default function Longevity() {
     {
       icon: Briefcase,
       title: 'Busy Professionals',
-      description: 'Seeking cognitive enhancement, peak energy, and executive health optimisation.'
+      description: 'Seeking cognitive enhancement, peak energy, and executive health optimization.'
     },
     {
       icon: HeartIcon,
@@ -114,10 +114,10 @@ export default function Longevity() {
           <ScrollReveal>
             <SectionLabel>VITALITY & LONGEVITY</SectionLabel>
             <h1 className="font-cormorant text-6xl md:text-8xl mb-8">
-              <span className="text-brand-navy leading-tight">Healthspan <br className="md:hidden" /> Optimisation</span>
+              <span className="text-brand-navy leading-tight">Healthspan <br className="md:hidden" /> Optimization</span>
             </h1>
             <p className="text-brand-muted text-lg md:text-xl font-dm italic leading-relaxed max-w-2xl mx-auto border-l-2 border-brand-teal pl-6">
-              Focusing on improving the number of years lived in good health, vitality, and independence through early detection and metabolic optimisation.
+              Focusing on improving the number of years lived in good health, vitality, and independence through early detection and metabolic optimization.
             </p>
           </ScrollReveal>
         </div>
@@ -214,7 +214,7 @@ export default function Longevity() {
                       <h3 className="font-dm font-semibold text-brand-navy text-xl mb-2">
                         {step.title}
                       </h3>
-                      <p className="text-brand-muted text-sm">
+                      <p className="text-brand-navy/80 text-base font-medium">
                         {step.description}
                       </p>
                     </div>
@@ -263,7 +263,7 @@ export default function Longevity() {
                   <h3 className="font-dm font-semibold text-brand-navy text-xl mb-4 uppercase tracking-wide">
                     {card.title}
                   </h3>
-                  <p className="text-brand-muted leading-relaxed text-sm">
+                  <p className="text-brand-navy/80 leading-relaxed text-base font-medium">
                     {card.description}
                   </p>
                 </div>
@@ -291,7 +291,7 @@ export default function Longevity() {
                   <h3 className="font-dm font-semibold text-brand-navy text-xl mb-4">
                     {profile.title}
                   </h3>
-                  <p className="text-brand-muted leading-relaxed">
+                  <p className="text-brand-navy/80 leading-relaxed text-base font-medium">
                     {profile.description}
                   </p>
                 </div>

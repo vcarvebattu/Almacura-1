@@ -93,7 +93,7 @@ export default function IntegrativeMedicine() {
           <ScrollReveal>
             <div className="text-center mb-16">
               <SectionLabel>THERAPEUTIC ENGINE</SectionLabel>
-              <h2 className="font-cormorant text-4xl sm:text-5xl text-brand-navy mt-4">Therapies Included</h2>
+              <h2 className="font-cormorant text-4xl sm:text-5xl text-brand-navy mt-4">Advanced Therapeutic Modalities</h2>
             </div>
           </ScrollReveal>
 

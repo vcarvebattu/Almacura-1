@@ -1,12 +1,35 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, MessageSquare, Calendar, Mail, Clock } from 'lucide-react';
 
 export default function Contact() {
+  const [submitted, setSubmitted] = useState(false);
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, margin: "-50px" },
     transition: { duration: 0.8, ease: "easeOut" }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const name = formData.get('name');
+    const phone = formData.get('phone');
+    const time = formData.get('time');
+    const message = formData.get('message');
+    const whatsappMessage = [
+      'Almacura inquiry',
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      `Preferred time: ${time}`,
+      `Message: ${message}`
+    ].join('\n');
+
+    window.open(`https://wa.me/919966030085?text=${encodeURIComponent(whatsappMessage)}`, '_blank', 'noopener,noreferrer');
+    setSubmitted(true);
+    form.reset();
   };
 
   return (
@@ -45,9 +68,9 @@ export default function Contact() {
                   <div>
                     <h4 className="font-dm text-sm font-bold text-brand-navy uppercase tracking-wider mb-2">Address</h4>
                     <p className="font-dm text-brand-text leading-relaxed">
-                      Near i s sadan cross roads,<br />
-                      Nagarjuna Sagar Road, Vinay Nagar colony,<br />
-                      Santosh Nagar, Hyderabad 500059
+                      At Nightingale Super Specialty Hospital,<br />
+                      Near Santoshnagar Cross Roads, Nagarjuna Sagar Road,<br />
+                      Vinaynagar Colony, Hyderabad-500059
                     </p>
                   </div>
                 </div>
@@ -59,7 +82,7 @@ export default function Contact() {
                   <div>
                     <h4 className="font-dm text-sm font-bold text-brand-navy uppercase tracking-wider mb-2">Phone</h4>
                     <p className="font-dm text-brand-text leading-relaxed">
-                      +91 99890 33686
+                      <a href="tel:+919966030085" className="hover:text-brand-teal transition-colors">+91 9966030085</a>
                     </p>
                   </div>
                 </div>
@@ -71,7 +94,7 @@ export default function Contact() {
                   <div>
                     <h4 className="font-dm text-sm font-bold text-brand-navy uppercase tracking-wider mb-2">Email</h4>
                     <p className="font-dm text-brand-text leading-relaxed">
-                      doctorkvsreddy@yahoo.com
+                      <a href="mailto:info@almacura.in" className="hover:text-brand-teal transition-colors">info@almacura.in</a>
                     </p>
                   </div>
                 </div>
@@ -92,16 +115,7 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full flex-1 px-8 py-5 bg-brand-navy text-white rounded-2xl font-dm font-bold text-xs tracking-[0.2em] uppercase shadow-lg shadow-brand-navy/10 hover:bg-brand-teal transition-all flex items-center justify-center gap-3"
-              >
-                <Calendar className="w-4 h-4" />
-                Book Consultation
-              </motion.button>
-              
-              <a href="https://wa.me/919989033686" target="_blank" rel="noreferrer" className="w-full flex-1">
+              <a href="https://wa.me/919966030085" target="_blank" rel="noreferrer" className="w-full">
                 <motion.button 
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -123,11 +137,13 @@ export default function Contact() {
                 <h3 className="font-cormorant text-3xl font-bold text-white mb-2">Send an Inquiry</h3>
                 <p className="font-dm text-white/70 mb-8">Our care coordinator will get back to you shortly.</p>
                 
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div>
                     <label className="block font-dm text-xs font-bold text-white/80 uppercase tracking-wider mb-2">Full Name</label>
                     <input 
                       type="text" 
+                      name="name"
+                      required
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-brand-teal transition-colors"
                       placeholder="Jane Doe"
                     />
@@ -137,6 +153,8 @@ export default function Contact() {
                     <label className="block font-dm text-xs font-bold text-white/80 uppercase tracking-wider mb-2">Phone Number</label>
                     <input 
                       type="tel" 
+                      name="phone"
+                      required
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-brand-teal transition-colors"
                       placeholder="+91"
                     />
@@ -144,7 +162,7 @@ export default function Contact() {
                   
                   <div>
                     <label className="block font-dm text-xs font-bold text-white/80 uppercase tracking-wider mb-2">Preferred Time for Call</label>
-                    <select className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-teal transition-colors appearance-none">
+                    <select name="time" required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-teal transition-colors appearance-none">
                       <option value="" className="text-brand-navy">Select a time</option>
                       <option value="morning" className="text-brand-navy">Morning (9 AM - 12 PM)</option>
                       <option value="afternoon" className="text-brand-navy">Afternoon (12 PM - 4 PM)</option>
@@ -156,10 +174,18 @@ export default function Contact() {
                     <label className="block font-dm text-xs font-bold text-white/80 uppercase tracking-wider mb-2">Primary Concern / Message</label>
                     <textarea 
                       rows={4}
+                      name="message"
+                      required
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-brand-teal transition-colors resize-none"
                       placeholder="How can we help you?"
                     ></textarea>
                   </div>
+
+                  {submitted && (
+                    <p className="font-dm text-brand-gold text-sm leading-relaxed">
+                      Your inquiry is ready in WhatsApp. Our care coordinator will review the details after you send it.
+                    </p>
+                  )}
                   
                   <motion.button 
                     whileHover={{ scale: 1.02 }}
@@ -175,6 +201,24 @@ export default function Contact() {
           </motion.div>
 
         </div>
+
+        {/* Map Section */}
+        <motion.div 
+          {...fadeInUp}
+          transition={{ delay: 0.4 }}
+          className="mt-20 rounded-[2.5rem] overflow-hidden border border-brand-teal/10 shadow-2xl h-[450px] relative"
+        >
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.261447191026!2d78.5095882!3d17.351148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb98658485a115%3A0x871146bda3e070fe!2sNightingale%20Super%20Speciality%20Hospital%20%26%20Laparoscopic%20centre%20%7C%20Santoshnagar%2C%20Saidabad%2C%20Champapet!5e0!3m2!1sen!2sin!4v1778323584647!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen="" 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            className="grayscale hover:grayscale-0 transition-all duration-700"
+          ></iframe>
+        </motion.div>
       </div>
     </main>
   );

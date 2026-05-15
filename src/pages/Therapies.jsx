@@ -57,7 +57,7 @@ export default function Therapies() {
                     Check My Suitability
                   </button>
                 </Link>
-                <a href="https://wa.me/919989033686" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/919966030085" target="_blank" rel="noopener noreferrer">
                   <button className="px-12 py-5 border-2 border-brand-teal text-brand-teal rounded-full font-dm font-bold text-[11px] uppercase tracking-[.3em] hover:bg-brand-teal hover:text-white transition-all flex items-center justify-center gap-3">
                     <MessageCircle size={18} /> Protocol Inquiry
                   </button>

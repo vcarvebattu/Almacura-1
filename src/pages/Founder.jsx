@@ -203,7 +203,7 @@ export default function Founder() {
       </section>
 
       {/* Clinical Team Identity */}
-      <section className="py-24 px-6 bg-brand-white">
+      <section className="py-24 px-6 bg-brand-ice">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <SectionLabel>INSTITUTE IDENTITY</SectionLabel>

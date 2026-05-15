@@ -89,7 +89,7 @@ export default function ForDoctors() {
                 </div>
 
                 <a 
-                  href="https://wa.me/919989033686"
+                  href="https://wa.me/919966030085"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-4 px-10 py-5 bg-brand-navy text-white rounded-full font-dm font-bold text-[11px] uppercase tracking-[.3em] hover:bg-brand-teal transition-all shadow-2xl shadow-brand-navy/20"

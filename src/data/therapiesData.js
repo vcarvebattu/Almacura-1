@@ -2,9 +2,10 @@ export const therapiesData = {
   hbot: {
     title: "Hyperbaric Oxygen Therapy (HBOT)",
     subtitle: "Enhanced tissue oxygenation under pressure",
+    img: "/therapy-hbot.png",
     description: "Breathing pure oxygen in a pressurized chamber to enhance tissue oxygenation.",
-    sessionDuration: "60–90 minutes",
-    typicalCourse: "20–40 sessions",
+    sessionDuration: "60-90 minutes",
+    typicalCourse: "20-40 sessions",
     nonInvasive: true,
     benefits: [
       "Faster healing",
@@ -39,9 +40,10 @@ export const therapiesData = {
   ozone: {
     title: "Ozone Therapy",
     subtitle: "Medical ozone for oxygen metabolism enhancement",
+    img: "/therapy-ozone.png",
     description: "Use of medical-grade ozone to stimulate the immune system and improve oxygen delivery.",
-    sessionDuration: "30–45 minutes",
-    typicalCourse: "10–20 sessions",
+    sessionDuration: "30-45 minutes",
+    typicalCourse: "10-20 sessions",
     nonInvasive: false,
     benefits: [
       "Enhanced oxygen metabolism",
@@ -74,8 +76,9 @@ export const therapiesData = {
   'iv-therapy': {
     title: "IV Nutrient Therapy",
     subtitle: "Direct cellular nourishment",
+    img: "/therapy-hydrogen.png",
     description: "Intravenous administration of vitamins, minerals, and antioxidants for maximum absorption.",
-    sessionDuration: "45–60 minutes",
+    sessionDuration: "45-60 minutes",
     typicalCourse: "Weekly or bi-weekly",
     nonInvasive: false,
     benefits: [
@@ -108,9 +111,10 @@ export const therapiesData = {
   hydrogen: {
     title: "Hydrogen Therapy",
     subtitle: "Selective antioxidant for oxidative stress reduction",
+    img: "/therapy-hydrogen.png",
     description: "Inhalation of molecular hydrogen gas to neutralize harmful free radicals.",
-    sessionDuration: "30–60 minutes",
-    typicalCourse: "20–40 sessions",
+    sessionDuration: "30-60 minutes",
+    typicalCourse: "20-40 sessions",
     nonInvasive: true,
     benefits: [
       "Selective antioxidant action",
@@ -138,9 +142,10 @@ export const therapiesData = {
   'red-light': {
     title: "Red Light Therapy",
     subtitle: "Mitochondrial energy optimization",
+    img: "/therapy-redlight.png",
     description: "Exposing the body to low-level red and near-infrared light to stimulate cellular energy.",
-    sessionDuration: "20–30 minutes",
-    typicalCourse: "10–20 sessions",
+    sessionDuration: "20-30 minutes",
+    typicalCourse: "10-20 sessions",
     nonInvasive: true,
     benefits: [
       "Mitochondrial energy production",
@@ -170,9 +175,10 @@ export const therapiesData = {
   acupuncture: {
     title: "Acupuncture",
     subtitle: "Balancing energy and biological systems",
+    img: "/therapy-pain.png",
     description: "Traditional practice of inserting thin needles at specific points to balance the body's flow of energy (Qi).",
-    sessionDuration: "45–60 minutes",
-    typicalCourse: "6–10 sessions",
+    sessionDuration: "45-60 minutes",
+    typicalCourse: "6-10 sessions",
     nonInvasive: false,
     benefits: [
       "Pain relief",
@@ -200,6 +206,191 @@ export const therapiesData = {
       "Needle removal after retention period"
     ],
     relatedTherapies: ['red-light', 'nutrition', 'ozone']
+  },
+  hifem: {
+    title: "HIFEM - Pelvic Chair Therapy",
+    subtitle: "High-Intensity Focused Electromagnetic Technology",
+    img: "/therapy-gynaecology.png",
+    description: "A non-invasive procedure for pelvic floor strengthening and urinary incontinence treatment.",
+    sessionDuration: "28 minutes",
+    typicalCourse: "6 sessions (twice weekly)",
+    nonInvasive: true,
+    benefits: [
+      "Pelvic floor muscle strengthening",
+      "Improvement in urinary incontinence",
+      "Enhanced sexual wellness",
+      "Post-delivery core restoration",
+      "Non-surgical functional repair"
+    ],
+    usedFor: [
+      "Stress incontinence",
+      "Urge incontinence",
+      "Pelvic organ prolapse (mild)",
+      "Postpartum recovery",
+      "Sexual dysfunction"
+    ],
+    notSuitableFor: [
+      "Pregnancy",
+      "Metal implants in treatment area",
+      "Pacemakers",
+      "Recent surgery in pelvic region"
+    ],
+    procedure: [
+      "Patient remains fully clothed",
+      "Sitting on specialized HIFEM chair",
+      "Controlled electromagnetic stimulation",
+      "Equivalent to thousands of pelvic floor contractions",
+      "Post-session evaluation"
+    ],
+    relatedTherapies: ['hifu', 'iv-therapy']
+  },
+  hifu: {
+    title: "HIFU - Women Wellness Therapy",
+    subtitle: "High-Intensity Focused Ultrasound for Restoration",
+    img: "/therapy-gynaecology.png",
+    description: "Advanced non-surgical ultrasonic technology for vaginal rejuvenation and tissue tightening.",
+    sessionDuration: "30-45 minutes",
+    typicalCourse: "1-3 sessions",
+    nonInvasive: true,
+    benefits: [
+      "Tissue tightening and rejuvenation",
+      "Enhanced lubrication and comfort",
+      "Improved structural integrity",
+      "Non-invasive regenerative response",
+      "Zero downtime restoration"
+    ],
+    usedFor: [
+      "Vaginal laxity",
+      "Post-menopausal dryness",
+      "Structural weakness",
+      "Mild urinary leakage",
+      "Aesthetic functional improvement"
+    ],
+    notSuitableFor: [
+      "Active pelvic infections",
+      "Menstruation during session",
+      "Pregnancy",
+      "Recent gynecological surgery"
+    ],
+    procedure: [
+      "Clinical diagnostic baseline",
+      "Precise ultrasound energy delivery",
+      "Thermal stimulation of collagen production",
+      "Deep tissue layer targeting",
+      "Immediate return to daily activity"
+    ],
+    relatedTherapies: ['hifem', 'iv-therapy']
+  },
+  eecp: {
+    title: "EECP Therapy",
+    subtitle: "Enhanced External Counter Pulsation",
+    img: "/therapy-eecp.png",
+    description: "A non-invasive treatment that improves blood flow to the heart and systemic circulation.",
+    sessionDuration: "60 minutes",
+    typicalCourse: "35 sessions (daily)",
+    nonInvasive: true,
+    benefits: [
+      "Natural bypass stimulation",
+      "Enhanced cardiovascular efficiency",
+      "Improved exercise tolerance",
+      "Systemic circulation boost",
+      "Reduced angina symptoms"
+    ],
+    usedFor: [
+      "Chronic stable angina",
+      "Heart failure (compensated)",
+      "Ischemic heart disease",
+      "Diabetic circulatory issues",
+      "Athletic performance recovery"
+    ],
+    notSuitableFor: [
+      "Severe aortic regurgitation",
+      "Severe peripheral vascular disease",
+      "DVT (Deep Vein Thrombosis)",
+      "High blood pressure (>170/110)"
+    ],
+    procedure: [
+      "Application of pressure cuffs on legs",
+      "ECG-synchronized inflation/deflation",
+      "Diastolic augmentation of blood flow",
+      "Continuous cardiac monitoring",
+      "Restoration of circulatory dynamics"
+    ],
+    relatedTherapies: ['hbot', 'ozone', 'iv-therapy']
+  },
+  prp: {
+    title: "PRP Therapy",
+    subtitle: "Platelet-rich plasma for regenerative support",
+    img: "/therapy-prp.png",
+    description: "A regenerative protocol using concentrated platelets and growth factors from the patient's own blood to support tissue repair.",
+    sessionDuration: "30-60 minutes",
+    typicalCourse: "3-6 sessions",
+    nonInvasive: false,
+    benefits: [
+      "Tissue repair support",
+      "Growth factor activation",
+      "Joint and soft tissue recovery",
+      "Skin and hair restoration support",
+      "Minimal downtime"
+    ],
+    usedFor: [
+      "Musculoskeletal injuries",
+      "Joint discomfort",
+      "Tendon and ligament recovery",
+      "Skin rejuvenation",
+      "Hair restoration support"
+    ],
+    notSuitableFor: [
+      "Active infection",
+      "Severe platelet disorders",
+      "Uncontrolled systemic illness",
+      "Anticoagulant use without physician review"
+    ],
+    procedure: [
+      "Clinical suitability review",
+      "Small blood sample collection",
+      "Platelet concentration preparation",
+      "Targeted application or injection",
+      "Recovery and follow-up guidance"
+    ],
+    relatedTherapies: ['red-light', 'dscb', 'iv-therapy']
+  },
+  dscb: {
+    title: "DSCB - Pain Management Therapies",
+    subtitle: "Deep Spinal & Cellular Blockade",
+    img: "/therapy-pain.png",
+    description: "Advanced clinical protocols for managing chronic and acute pain through localized neuro-modulation.",
+    sessionDuration: "30-60 minutes",
+    typicalCourse: "As per clinical evaluation",
+    nonInvasive: false,
+    benefits: [
+      "Rapid pain signal interruption",
+      "Reduced dependency on oral analgesics",
+      "Improved mobility and function",
+      "Targeted anti-inflammatory effect",
+      "Long-term pain pathway modulation"
+    ],
+    usedFor: [
+      "Chronic back & neck pain",
+      "Radiculopathy (Sciatica)",
+      "Neuropathic pain",
+      "Joint-related inflammatory pain",
+      "Post-surgical pain syndromes"
+    ],
+    notSuitableFor: [
+      "Active systemic infection",
+      "Coagulation disorders",
+      "Allergy to local anesthetics",
+      "Infection at injection site"
+    ],
+    procedure: [
+      "Precision imaging-guided localization",
+      "Delivery of therapeutic agents to target nerves",
+      "Monitoring of sensory/motor response",
+      "Clinical observation period",
+      "Home-care protocol briefing"
+    ],
+    relatedTherapies: ['red-light', 'acupuncture', 'iv-therapy']
   }
 };
 
@@ -239,5 +430,35 @@ export const therapyList = [
     icon: 'ShieldAlert',
     title: 'Acupuncture',
     shortDescription: 'Restore biological balance and manage pain through evidence-informed meridian therapy.'
+  },
+  {
+    slug: 'hifem',
+    icon: 'Zap',
+    title: 'HIFEM - Pelvic Chair Therapy',
+    shortDescription: 'Non-invasive electromagnetic stimulation for pelvic floor strengthening and wellness.'
+  },
+  {
+    slug: 'hifu',
+    icon: 'Waves',
+    title: 'HIFU - Women Wellness Therapy',
+    shortDescription: 'Advanced ultrasonic technology for non-surgical vaginal rejuvenation and tightening.'
+  },
+  {
+    slug: 'eecp',
+    icon: 'Activity',
+    title: 'EECP Therapy',
+    shortDescription: 'Improve cardiac blood flow and systemic circulation through external counter-pulsation.'
+  },
+  {
+    slug: 'prp',
+    icon: 'Sparkles',
+    title: 'PRP Therapy',
+    shortDescription: 'Use platelet-rich plasma protocols to support tissue repair and regenerative recovery.'
+  },
+  {
+    slug: 'dscb',
+    icon: 'Shield',
+    title: 'DSCB - Pain Management',
+    shortDescription: 'Precision clinical blocks for managing chronic pain and restoring mobility.'
   }
 ];

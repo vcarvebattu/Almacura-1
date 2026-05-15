@@ -63,7 +63,7 @@ export default function SuitabilityModal({ isOpen, onClose }) {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
-                  href="https://wa.me/919989033686"
+                  href="https://wa.me/919966030085"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 bg-brand-teal text-white py-4 px-6 rounded-xl font-dm font-bold text-[11px] uppercase tracking-[0.2em] text-center hover:bg-brand-navy transition-all shadow-lg shadow-brand-teal/20"

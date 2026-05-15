@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Leaf, Heart, Activity, ArrowRight, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function FunctionalGynaecology() {
   const fadeInUp = {
@@ -56,14 +57,17 @@ export default function FunctionalGynaecology() {
               </p>
               
               <div className="flex gap-4">
-                <motion.a 
-                  href="/contact"
+                <motion.div
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-8 py-4 bg-brand-navy text-white rounded-full font-dm font-bold text-xs tracking-[0.2em] uppercase shadow-xl shadow-brand-navy/10 hover:bg-brand-teal transition-all flex items-center justify-center gap-3"
                 >
-                  Book Consultation
-                </motion.a>
+                  <Link
+                    to="/contact"
+                    className="px-8 py-4 bg-brand-navy text-white rounded-full font-dm font-bold text-xs tracking-[0.2em] uppercase shadow-xl shadow-brand-navy/10 hover:bg-brand-teal transition-all flex items-center justify-center gap-3"
+                  >
+                    Book Consultation
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -162,25 +166,28 @@ export default function FunctionalGynaecology() {
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div {...fadeInUp}>
-              <h2 className="font-cormorant text-4xl md:text-5xl font-bold text-brand-navy mb-6">Advanced Therapies</h2>
+              <h2 className="font-cormorant text-4xl md:text-5xl font-bold text-brand-navy mb-6">Advanced Therapeutic Modalities</h2>
               <p className="font-dm text-lg text-brand-text mb-8 leading-relaxed">
                 We utilize state-of-the-art, non-surgical modalities designed to safely and effectively restore tissue function and promote natural regeneration.
               </p>
               
               <ul className="space-y-6">
                 {[
-                  { title: 'PRP-Based Procedures', desc: 'Utilising your body\'s own growth factors for tissue repair.' },
-                  { title: 'Energy-Based Therapies', desc: 'Advanced non-invasive treatments to improve circulation and tone.' },
-                  { title: 'Pelvic Floor Rehabilitation', desc: 'Structured programs to restore strength and function.' },
-                  { title: 'Hormonal & Metabolic Optimisation', desc: 'Comprehensive balancing for systemic wellness.' }
+                  { id: 'tissue', title: 'HIFU - Women Wellness Therapy', desc: 'Focused ultrasound support for tissue tone, comfort, and non-surgical restoration.', path: '/therapies/hifu' },
+                  { id: 'pelvic', title: 'HIFEM - Pelvic Chair Therapy', desc: 'Electromagnetic pelvic floor activation for strength, control, and recovery support.', path: '/therapies/hifem' },
+                  { id: 'hormonal', title: 'Hormonal & Metabolic Optimization', desc: 'Comprehensive balancing for systemic wellness and stage-specific support.', path: '/contact' },
+                  { id: 'prp', title: 'PRP-Based Procedures', desc: 'Utilising your body\'s own growth factors for tissue repair.', path: '/therapies/prp' }
                 ].map((therapy, i) => (
-                  <li key={i} className="flex items-start gap-4 p-4 rounded-2xl bg-brand-light/50 border border-brand-teal/5 hover:border-brand-teal/20 transition-colors">
+                  <li id={therapy.id} key={therapy.id} className="scroll-mt-36 flex items-start gap-4 p-4 rounded-2xl bg-brand-light/50 border border-brand-teal/5 hover:border-brand-teal/20 transition-colors">
                     <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 shadow-sm">
                       <div className="w-2 h-2 bg-brand-teal rounded-full"></div>
                     </div>
                     <div>
                       <h4 className="font-dm font-bold text-brand-navy mb-1">{therapy.title}</h4>
-                      <p className="font-dm text-sm text-brand-text">{therapy.desc}</p>
+                      <p className="font-dm text-base font-medium text-brand-navy/80">{therapy.desc}</p>
+                      <Link to={therapy.path} className="inline-flex items-center gap-2 mt-3 font-dm text-[10px] font-bold uppercase tracking-[0.2em] text-brand-teal hover:text-brand-navy transition-colors">
+                        View pathway <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
                     </div>
                   </li>
                 ))}

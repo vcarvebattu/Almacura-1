@@ -7,6 +7,7 @@ import SectionLabel from '../components/SectionLabel';
 export default function Programs() {
   const programs = [
     {
+      id: 'detox',
       title: 'Detox Program',
       icon: Leaf,
       desc: 'Systemic detoxification protocols focusing on cellular health and liver optimization.',
@@ -14,6 +15,7 @@ export default function Programs() {
       features: ['Cellular Cleansing', 'Metabolic Reset', 'Antioxidant Support']
     },
     {
+      id: 'energy',
       title: 'Energy Boost Program',
       icon: Zap,
       desc: 'Mitochondrial revitalization through oxygenation and nutrient optimization.',
@@ -21,6 +23,7 @@ export default function Programs() {
       features: ['Mitochondrial Activation', 'ATP Synthesis Support', 'Fatigue Reduction']
     },
     {
+      id: 'longevity',
       title: 'Longevity Program',
       icon: Clock,
       desc: 'Advanced protocols for biological age optimization and cellular resilience.',
@@ -28,6 +31,7 @@ export default function Programs() {
       features: ['Cellular Repair', 'DNA Support', 'Systemic Anti-aging']
     },
     {
+      id: 'fertility',
       title: 'Fertility Support Program',
       icon: Heart,
       desc: 'Integrative approach to reproductive health and hormonal balance.',
@@ -49,7 +53,7 @@ export default function Programs() {
               Clinical <span className="italic text-brand-teal font-normal">Programs</span>
             </h1>
             <p className="text-brand-muted text-xl leading-relaxed italic max-w-2xl font-cormorant border-l-4 border-brand-teal/20 pl-8">
-              "Designed for better results — Bundled therapies for comprehensive health outcomes."
+              "Designed for better results - bundled therapies for comprehensive health outcomes."
             </p>
           </div>
         </ScrollReveal>
@@ -57,8 +61,8 @@ export default function Programs() {
         {/* Programs Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-32">
           {programs.map((p, idx) => (
-            <ScrollReveal key={idx} delay={idx * 0.1}>
-              <div className="bg-white p-6 lg:p-8 rounded-[1.5rem] shadow-xl shadow-brand-navy/5 border border-brand-teal/10 hover:border-brand-teal/30 hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden flex flex-col h-full">
+            <ScrollReveal key={p.id} delay={idx * 0.1}>
+              <div id={p.id} className="scroll-mt-36 bg-white p-6 lg:p-8 rounded-[1.5rem] shadow-xl shadow-brand-navy/5 border border-brand-teal/10 hover:border-brand-teal/30 hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden flex flex-col h-full">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-brand-ice/50 rounded-bl-full group-hover:scale-110 transition-transform duration-700" />
                 
                 <div className="relative z-10 flex flex-col h-full">
@@ -116,7 +120,7 @@ export default function Programs() {
                     View Pricing Structure
                   </button>
                 </Link>
-                <a href="https://wa.me/919989033686" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <a href="https://wa.me/919966030085" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                   <button className="w-full sm:w-auto px-10 py-5 border-2 border-white/20 text-white rounded-full font-dm font-bold text-[11px] uppercase tracking-[.3em] hover:bg-white/10 transition-all flex items-center justify-center gap-3">
                     <MessageCircle size={18} /> Protocol Talk
                   </button>

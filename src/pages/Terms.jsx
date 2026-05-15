@@ -6,7 +6,7 @@ export default function Terms() {
     {
       title: '1. Scope of Services',
       content: [
-        'ALMACURA provides medical services based on a structured model of integrative medicine and healthspan optimisation.',
+        'ALMACURA provides medical services based on a structured model of integrative medicine and healthspan optimization.',
         'Treatment plans may include: conventional medical care, advanced therapeutic modalities (e.g., HBOT, EECP, ozone therapy, photobiomodulation, hydrogen therapy), supportive interventions including Yoga therapy, and selected complementary approaches when clinically appropriate.',
         'All treatments are offered as part of a supervised clinical program.'
       ]
@@ -38,7 +38,7 @@ export default function Terms() {
       content: [
         'Response to treatment varies between individuals.',
         'While many patients experience improvement in symptoms, better functional capacity, and enhanced well-being, ALMACURA does not guarantee specific outcomes or cure.',
-        'Treatment aims to support improvement and optimisation, not provide assured results.'
+        'Treatment aims to support improvement and optimization, not provide assured results.'
       ]
     },
     {
@@ -79,9 +79,9 @@ export default function Terms() {
       ]
     },
     {
-      title: '11. Healthspan Optimisation Services',
+      title: '11. Healthspan Optimization Services',
       content: [
-        'Healthspan optimisation services are preventive and supportive in nature.',
+        'Healthspan optimization services are preventive and supportive in nature.',
         'These are intended to: enhance physiological resilience and improve long-term health. They are not substitutes for medical treatment of active disease.'
       ]
     },
@@ -110,7 +110,7 @@ export default function Terms() {
               Terms of Treatment
             </h1>
             <p className="text-brand-muted text-xl leading-relaxed max-w-2xl mx-auto font-dm uppercase tracking-widest text-xs">
-              Institute of Integrative Medicine & Healthspan Optimisation
+              Institute of Integrative Medicine, Healthspan Optimization & Functional Gynaecology
             </p>
           </ScrollReveal>
         </div>

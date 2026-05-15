@@ -156,7 +156,7 @@ export default function FAQ() {
                             Phone & WhatsApp
                           </div>
                           <div className="text-brand-navy">
-                            +91 9989033686
+                            +91 9966030085
                           </div>
                         </div>
                         <div>
@@ -164,7 +164,7 @@ export default function FAQ() {
                             Email
                           </div>
                           <div className="text-brand-navy break-all">
-                            doctorkvsreddy@yahoo.com
+                            info@almacura.in
                           </div>
                         </div>
                         <div>
@@ -180,7 +180,7 @@ export default function FAQ() {
                             Maps
                           </div>
                           <a
-                            href="https://maps.google.com/?q=Secunderabad%2C+Hyderabad"
+                            href="https://maps.google.com/?q=Nightingale+Super+Speciality+Hospital+Santoshnagar"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-brand-navy underline hover:text-brand-teal transition-colors"

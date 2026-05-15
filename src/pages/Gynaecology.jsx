@@ -214,7 +214,7 @@ function WhatsAppButton() {
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className="px-6 py-4 bg-white border border-brand-gold-soft/30 text-brand-gold-soft font-dm uppercase tracking-widest text-[11px] font-bold rounded-sm shadow-sm hover:shadow-md transition-all duration-300"
-      onClick={() => window.open('https://wa.me/919989033686', '_blank')}
+      onClick={() => window.open('https://wa.me/919966030085', '_blank')}
     >
       WhatsApp Consultation
     </motion.button>
