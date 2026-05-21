@@ -68,9 +68,9 @@ export default function Founder() {
             <ScrollReveal variant="fadeLeft">
               <div className="relative">
                 <img
-                  src="/07_round_signage_mockup.png"
-                  alt="ALMACURA Institute Signage"
-                  className="w-full max-w-sm rounded-sm object-cover mx-auto"
+                  src="/doctorr.jpeg"
+                  alt="Dr. Vijay Shekar Reddy"
+                  className="w-full max-w-sm rounded-sm object-cover mx-auto shadow-lg"
                 />
               </div>
             </ScrollReveal>
