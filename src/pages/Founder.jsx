@@ -2,8 +2,13 @@ import { Award, BookOpen, Heart, Microscope, TrendingUp, Users } from 'lucide-re
 import ScrollReveal from '../components/ScrollReveal';
 import SectionLabel from '../components/SectionLabel';
 import CTAButton from '../components/CTAButton';
+import useSEO from '../hooks/useSEO';
 
 export default function Founder() {
+  useSEO(
+    'Dr. K. Vijaya Shekar Reddy - Founder & Mentor',
+    'Learn about Dr. K. Vijaya Shekar Reddy, senior General Surgeon and Founder & Mentor of ALMACURA, advocate of Integrative Medicine & Healthspan Optimization.'
+  );
   const timeline = [
     {
       year: '1990s',
@@ -32,27 +37,26 @@ export default function Founder() {
     }
   ];
 
-  const interests = [
-    {
-      icon: Microscope,
-      title: 'Integrative Medicine',
-      description: 'Combining conventional diagnostics with innovative therapeutic modalities for comprehensive patient care.'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Longevity Medicine',
-      description: 'Biological age optimization through cellular health enhancement and metabolic intervention strategies.'
-    },
-    {
-      icon: Heart,
-      title: 'Advanced Therapeutic Technologies',
-      description: 'Implementation of HBOT, EECP, PRP, Ozone, Photobiomodulation, and Molecular Hydrogen therapies.'
-    },
-    {
-      icon: Users,
-      title: 'Preventive Healthcare',
-      description: 'Proactive health optimization to prevent disease rather than merely treating symptoms after onset.'
-    }
+  const clinicalVision = [
+    'Integrative & Preventive Healthcare',
+    'Healthspan Optimization',
+    'Functional & Regenerative Wellness',
+    'Recovery & Rehabilitation Support',
+    'Personalized Wellness Pathways',
+    'Non-Surgical Advanced Therapies',
+    'Metabolic & Circulatory Wellness Support',
+    'Long-Term Functional Health Improvement'
+  ];
+
+  const integrativeFocus = [
+    'Hyperbaric Oxygen Therapy (HBOT)',
+    'EECP Therapy',
+    'Photobiomodulation Therapy',
+    'Ozone Therapy',
+    'Hydrogen Therapy',
+    'Functional Recovery Programs',
+    'Lifestyle & Wellness Optimization',
+    'Regenerative Supportive Therapies'
   ];
 
   return (
@@ -73,9 +77,9 @@ export default function Founder() {
 
             <ScrollReveal variant="fadeRight" delay={0.2}>
               <div>
-                <SectionLabel>FOUNDER & DIRECTOR</SectionLabel>
+                <SectionLabel>FOUNDER & MENTOR – ALMACURA</SectionLabel>
                 <h1 className="font-cormorant text-6xl md:text-7xl text-brand-navy mb-6 italic">
-                  Dr. Vijay Shekar Reddy
+                  Dr. K. Vijaya Shekar Reddy
                 </h1>
                 <div className="flex flex-wrap gap-3 mb-8">
                   <div className="glass-card px-4 py-2">
@@ -85,19 +89,19 @@ export default function Founder() {
                   </div>
                   <div className="glass-card px-4 py-2">
                     <span className="font-mono text-brand-teal text-sm uppercase tracking-wider">
-                      MS (General Surgery)
+                      MS
                     </span>
                   </div>
                 </div>
                 <div className="space-y-6 text-brand-muted leading-relaxed">
                   <p>
-                    With over three decades of clinical experience, Dr. Vijay Shekar Reddy has dedicated his career to advancing patient care through the integration of modern diagnostics and innovative therapeutic technologies.
+                    Dr. K. Vijaya Shekar Reddy is a senior General Surgeon with more than three decades of clinical, general and laparoscopic surgical experience. Through years of managing complex chronic and lifestyle-related health conditions, he recognized the growing need for a broader healthcare approach that extends beyond conventional symptom-based treatment and supports long-term recovery, resilience, and overall well-being.
                   </p>
                   <p>
-                    His journey from conventional surgical practice to integrative medicine reflects a commitment to addressing root causes rather than merely treating symptoms. He recognized that optimal health requires more than reactive intervention — it demands proactive optimization.
+                    This vision led to the establishment of ALMACURA — a specialized institute focused on Integrative Medicine, Healthspan Optimization, Functional & Regenerative Gynecology, and advanced non-invasive wellness therapies.
                   </p>
                   <p className="text-brand-navy font-dm font-medium">
-                    ALMACURA represents the culmination of this vision: a medical institute where diagnostics guide therapy, evidence informs protocol, and patient outcomes are systematically measured and optimized.
+                    His approach combines modern clinical medicine with evidence-informed supportive and regenerative technologies designed to help individuals improve functional health, vitality, recovery, and quality of life through structured and personalized care pathways.
                   </p>
                 </div>
               </div>
@@ -153,51 +157,56 @@ export default function Founder() {
       <section className="py-24 px-6 bg-brand-ice">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
-            <SectionLabel>VISION</SectionLabel>
+            <SectionLabel>FOUNDER'S NOTE</SectionLabel>
             <div className="border-l-4 border-brand-teal pl-8 md:pl-12">
-              <blockquote className="text-4xl md:text-5xl lg:text-6xl font-cormorant italic text-brand-teal leading-tight mb-8">
-                "To create a medical institute that integrates modern diagnostics with innovative therapies — improving long-term health outcomes for every patient."
+              <blockquote className="text-3xl md:text-4xl lg:text-5xl font-cormorant italic text-brand-teal leading-tight mb-8">
+                "At ALMACURA, our goal is not only to support recovery from illness, but also to help individuals improve vitality, functional wellness, and long-term quality of life through integrative, patient-centric healthcare."
               </blockquote>
-              <div className="text-brand-muted leading-relaxed space-y-4">
-                <p>
-                  Dr. Reddy's vision extends beyond conventional treatment paradigms. He believes that medicine should not merely respond to disease but actively work to preserve, optimize, and restore health.
-                </p>
-                <p>
-                  This philosophy drives every aspect of ALMACURA — from the diagnostic-first approach to the selection of evidence-based therapies, from personalized protocols to systematic outcome measurement.
-                </p>
-                <p className="text-brand-navy font-dm font-medium">
-                  The goal is not just to treat illness. The goal is to optimize human vitality.
-                </p>
+              <div className="text-brand-navy font-dm font-medium">
+                – Dr. K. Vijaya Shekar Reddy
               </div>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Areas of Interest */}
+      {/* Clinical Vision & Integrative Focus */}
       <section className="py-24 px-6 bg-brand-white">
         <div className="max-w-7xl mx-auto">
-          <ScrollReveal>
-            <SectionLabel>AREAS OF EXPERTISE</SectionLabel>
-            <h2 className="font-cormorant text-5xl md:text-6xl text-brand-navy mb-16">
-              Clinical Focus & Research Interests
-            </h2>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {interests.map((interest, index) => (
-              <ScrollReveal key={interest.title} delay={index * 0.1}>
-                <div className="glass-card p-8 h-full hover:border-brand-teal transition-all duration-300">
-                  <interest.icon className="mb-6 text-brand-teal" size={48} strokeWidth={1.5} />
-                  <h3 className="font-dm font-semibold text-brand-navy text-2xl mb-4">
-                    {interest.title}
-                  </h3>
-                  <p className="text-brand-muted leading-relaxed">
-                    {interest.description}
-                  </p>
+          <div className="grid md:grid-cols-2 gap-16">
+            <ScrollReveal variant="fadeLeft">
+              <div>
+                <SectionLabel>CLINICAL VISION</SectionLabel>
+                <h2 className="font-cormorant text-5xl text-brand-navy mb-8">
+                  Founder's Clinical Vision
+                </h2>
+                <div className="space-y-3">
+                  {clinicalVision.map((item, index) => (
+                    <div key={index} className="flex items-center gap-3 p-4 bg-brand-ice/25 rounded-sm border border-brand-border hover:border-brand-teal/30 transition-colors duration-300">
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-teal flex-shrink-0"></span>
+                      <span className="text-brand-navy font-dm font-medium text-sm md:text-base">{item}</span>
+                    </div>
+                  ))}
                 </div>
-              </ScrollReveal>
-            ))}
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal variant="fadeRight" delay={0.2}>
+              <div>
+                <SectionLabel>INTEGRATIVE FOCUS</SectionLabel>
+                <h2 className="font-cormorant text-5xl text-brand-navy mb-8">
+                  Areas of Integrative Focus
+                </h2>
+                <div className="space-y-3">
+                  {integrativeFocus.map((item, index) => (
+                    <div key={index} className="flex items-center gap-3 p-4 bg-brand-ice/25 rounded-sm border border-brand-border hover:border-brand-teal/30 transition-colors duration-300">
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-teal flex-shrink-0"></span>
+                      <span className="text-brand-navy font-dm font-medium text-sm md:text-base">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>

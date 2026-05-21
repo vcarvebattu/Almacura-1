@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, MessageSquare, Calendar, Mail, Clock } from 'lucide-react';
+import useSEO from '../hooks/useSEO';
 
 export default function Contact() {
+  useSEO(
+    'Contact ALMACURA | Location & Appointments',
+    'Get in touch with ALMACURA at Nightingale Super Specialty Hospital. View contact numbers, location directions, and download QR codes for printables.'
+  );
   const [submitted, setSubmitted] = useState(false);
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
@@ -201,6 +206,64 @@ export default function Contact() {
           </motion.div>
 
         </div>
+
+        {/* Printables & QR Codes Section */}
+        <motion.div 
+          {...fadeInUp}
+          className="mt-20 bg-white rounded-[2.5rem] p-10 border border-brand-teal/10 shadow-sm"
+        >
+          <div className="max-w-3xl">
+            <span className="font-dm text-[11px] font-bold tracking-[0.3em] text-brand-teal uppercase mb-2 block">
+              Clinic Assets
+            </span>
+            <h3 className="font-cormorant text-4xl font-bold text-brand-navy mb-4">Printable QR Codes</h3>
+            <p className="font-dm text-brand-text mb-8">
+              Download high-resolution QR codes to include in printables, cards, brochures, or templates. Scanning these QR codes directs patients to our official website or Google Maps navigation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Website QR Card */}
+            <div className="bg-brand-beige/50 p-8 rounded-3xl border border-brand-teal/5 flex flex-col md:flex-row items-center gap-6">
+              <div className="w-36 h-36 bg-white p-3 rounded-2xl shadow-md border border-brand-teal/10 flex items-center justify-center shrink-0">
+                <img src="/qr-website.png" alt="ALMACURA Website QR Code" className="w-full h-full object-contain" />
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <h4 className="font-dm text-lg font-bold text-brand-navy mb-2">Website QR Code</h4>
+                <p className="text-sm text-brand-muted mb-4 leading-relaxed">
+                  Links to <strong>https://almacura.in/</strong>. Use this for general marketing materials, clinical signs, and business cards.
+                </p>
+                <a 
+                  href="/qr-website.png" 
+                  download="Almacura-Website-QR.png"
+                  className="inline-flex items-center justify-center px-5 py-2.5 bg-brand-teal text-white rounded-xl font-dm text-xs font-bold uppercase tracking-wider hover:bg-brand-navy transition-all shadow-md"
+                >
+                  Download PNG
+                </a>
+              </div>
+            </div>
+
+            {/* Location QR Card */}
+            <div className="bg-brand-beige/50 p-8 rounded-3xl border border-brand-teal/5 flex flex-col md:flex-row items-center gap-6">
+              <div className="w-36 h-36 bg-white p-3 rounded-2xl shadow-md border border-brand-teal/10 flex items-center justify-center shrink-0">
+                <img src="/qr-location.png" alt="ALMACURA Location QR Code" className="w-full h-full object-contain" />
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <h4 className="font-dm text-lg font-bold text-brand-navy mb-2">Location & Maps QR</h4>
+                <p className="text-sm text-brand-muted mb-4 leading-relaxed">
+                  Links directly to our Google Maps listing at Nightingale Hospital. Use this to help patients navigate to the clinic.
+                </p>
+                <a 
+                  href="/qr-location.png" 
+                  download="Almacura-Location-QR.png"
+                  className="inline-flex items-center justify-center px-5 py-2.5 bg-brand-teal text-white rounded-xl font-dm text-xs font-bold uppercase tracking-wider hover:bg-brand-navy transition-all shadow-md"
+                >
+                  Download PNG
+                </a>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Map Section */}
         <motion.div 

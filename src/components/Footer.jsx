@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, Star, MapPin, ExternalLink } from 'lucide-react';
+import { Mail, Phone, Star, MapPin, ExternalLink, Facebook, Instagram, Linkedin, Youtube, Twitter } from 'lucide-react';
 
 const googleReviewsUrl = 'https://www.google.com/search?q=Almacura+Institute+Hyderabad+Google+Reviews';
 
@@ -63,6 +63,23 @@ export default function Footer() {
             <p className="text-white/60 text-sm leading-relaxed max-w-sm">
               Institute of Integrative Medicine, Healthspan Optimization & Functional Gynaecology.
             </p>
+            <div className="flex gap-3 mt-6">
+              <a href="https://facebook.com/almacura" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-brand-teal hover:bg-white/10 hover:border-brand-teal/30 transition-all" aria-label="Facebook">
+                <Facebook size={14} />
+              </a>
+              <a href="https://instagram.com/almacuravitality" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-brand-teal hover:bg-white/10 hover:border-brand-teal/30 transition-all" aria-label="Instagram">
+                <Instagram size={14} />
+              </a>
+              <a href="https://linkedin.com/company/almacura" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-brand-teal hover:bg-white/10 hover:border-brand-teal/30 transition-all" aria-label="LinkedIn">
+                <Linkedin size={14} />
+              </a>
+              <a href="https://youtube.com/@almacura" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-brand-teal hover:bg-white/10 hover:border-brand-teal/30 transition-all" aria-label="YouTube">
+                <Youtube size={14} />
+              </a>
+              <a href="https://twitter.com/almacura" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-brand-teal hover:bg-white/10 hover:border-brand-teal/30 transition-all" aria-label="X (Twitter)">
+                <Twitter size={14} />
+              </a>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">

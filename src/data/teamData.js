@@ -1,11 +1,19 @@
 export const teamMembers = [
   {
-    name: 'Dr. Vijay Shekar Reddy',
-    role: 'Founder & Director',
-    qualification: 'MBBS, MS (General Surgery)',
-    specialty: 'Integrative Surgery',
+    name: 'Dr. K. Vijaya Shekar Reddy',
+    role: 'Founder & Mentor',
+    qualification: 'MBBS, MS',
+    specialty: 'General Surgeon | Integrative Medicine Advocate',
     image: '/logo.png',
-    bio: 'Leads the institute with a multidisciplinary clinical model focused on diagnostics, therapeutic restoration, and long-term health outcomes.'
+    bio: 'Senior General Surgeon with over three decades of clinical experience. Leads the institute with a focus on Integrative Medicine and Healthspan Optimization.'
+  },
+  {
+    name: 'Dr. K. Lalitha Reddy',
+    role: 'Director - Nightingale Hospital',
+    qualification: 'MBBS, DGO',
+    specialty: 'Senior Functional & Regenerative Gynaecology Consultant',
+    image: '/logo.png',
+    bio: 'Senior Gynaecologist & Obstetrician with over 32 years of experience. Active in clinical care and leadership, specializing in women’s wellness services.'
   },
   {
     name: 'Dr. S. K. Lakshmi',

@@ -391,6 +391,44 @@ export const therapiesData = {
       "Home-care protocol briefing"
     ],
     relatedTherapies: ['red-light', 'acupuncture', 'iv-therapy']
+  },
+  'infrared-sauna': {
+    title: "Infrared Sauna",
+    subtitle: "Deep thermal heat for cellular detoxification & recovery",
+    img: "/therapy-sauna.png",
+    description: "Exposing the body to infrared heat wavelengths to stimulate circulation, promote detoxification, and support cellular repair.",
+    sessionDuration: "30-45 minutes",
+    typicalCourse: "2-3 times per week",
+    nonInvasive: true,
+    benefits: [
+      "Deep cellular detoxification",
+      "Improved circulation & vascular function",
+      "Muscle recovery & pain relief",
+      "Stress reduction & deep relaxation",
+      "Caloric burn & metabolic support",
+      "Skin purification & health"
+    ],
+    usedFor: [
+      "Chronic fatigue & pain",
+      "Muscle soreness & joint stiffness",
+      "Detoxification support",
+      "Cardiovascular wellness support",
+      "Stress & sleep management"
+    ],
+    notSuitableFor: [
+      "Pregnancy",
+      "Recent myocardial infarction or unstable angina",
+      "Severe dehydration",
+      "Heat insensitivity"
+    ],
+    procedure: [
+      "Pre-session hydration and vitals check",
+      "Placement in private infrared cabin",
+      "Customized wavelength & temperature setting",
+      "Relaxation during the controlled heating cycle",
+      "Post-session cooldown & electrolyte rehydration"
+    ],
+    relatedTherapies: ['hbot', 'red-light', 'ozone']
   }
 };
 
@@ -460,5 +498,11 @@ export const therapyList = [
     icon: 'Shield',
     title: 'DSCB - Pain Management',
     shortDescription: 'Precision clinical blocks for managing chronic pain and restoring mobility.'
+  },
+  {
+    slug: 'infrared-sauna',
+    icon: 'Flame',
+    title: 'Infrared Sauna',
+    shortDescription: 'Deep thermal heat for cellular detoxification, cardiovascular efficiency, and muscle recovery.'
   }
 ];

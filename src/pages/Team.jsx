@@ -3,18 +3,88 @@ import { ChevronDown } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import SectionLabel from '../components/SectionLabel';
 import CTAButton from '../components/CTAButton';
+import useSEO from '../hooks/useSEO';
 
 export default function Team() {
+  useSEO(
+    'Our Clinical Specialists & Directors',
+    'Meet the medical directors and consultants at ALMACURA, leading integrative wellness, pelvic floor rehabilitation, non-surgical pain management, and preventive women’s healthcare.'
+  );
   const teamMembers = [
     {
-      name: 'Dr. Vijay Shekar Reddy',
-      credentials: ['MBBS', 'MS (General Surgery)'],
-      role: 'Founder & Director',
-      specialty: 'Integrative Medicine & Health Span Optimization',
-      bio: 'With over three decades of clinical experience, Dr. Vijay Shekar Reddy has dedicated his career to advancing patient care through the integration of modern diagnostics and innovative therapeutic technologies.',
-      areas: ['Integrative Medicine', 'Longevity Medicine', 'Advanced Therapeutics', 'Preventive Healthcare'],
-      fullBio: 'His journey from conventional surgical practice to integrative medicine reflects a commitment to addressing root causes rather than merely treating symptoms.',
-      clinicalFocus: ['Integrative Medicine', 'Longevity Medicine', 'Advanced Therapeutic Technologies', 'Preventive Healthcare']
+      name: 'Dr. K. Vijaya Shekar Reddy',
+      credentials: ['MBBS', 'MS'],
+      role: 'Founder & Mentor – ALMACURA',
+      specialty: 'General Surgeon | Integrative Medicine Advocate',
+      bio: 'Dr. K. Vijaya Shekar Reddy is a senior General Surgeon with more than three decades of clinical, general and laparoscopic surgical experience. Through years of managing complex chronic and lifestyle-related health conditions, he recognized the growing need for a broader healthcare approach that extends beyond conventional symptom-based treatment and supports long-term recovery, resilience, and overall well-being.',
+      fullBio: 'This vision led to the establishment of ALMACURA — a specialized institute focused on Integrative Medicine, Healthspan Optimization, Functional & Regenerative Gynecology, and advanced non-invasive wellness therapies. His approach combines modern clinical medicine with evidence-informed supportive and regenerative technologies designed to help individuals improve functional health, vitality, recovery, and quality of life through structured and personalized care pathways.',
+      clinicalFocus: [
+        'Integrative & Preventive Healthcare',
+        'Healthspan Optimization',
+        'Functional & Regenerative Wellness',
+        'Recovery & Rehabilitation Support',
+        'Personalized Wellness Pathways',
+        'Non-Surgical Advanced Therapies',
+        'Metabolic & Circulatory Wellness Support',
+        'Long-Term Functional Health Improvement'
+      ],
+      areas: [
+        'Hyperbaric Oxygen Therapy (HBOT)',
+        'EECP Therapy',
+        'Photobiomodulation Therapy',
+        'Ozone Therapy',
+        'Hydrogen Therapy',
+        'Functional Recovery Programs',
+        'Lifestyle & Wellness Optimization',
+        'Regenerative Supportive Therapies'
+      ],
+      note: 'At ALMACURA, our goal is not only to support recovery from illness, but also to help individuals improve vitality, functional wellness, and long-term quality of life through integrative, patient-centric healthcare.'
+    },
+    {
+      name: 'Dr. K. Lalitha Reddy',
+      credentials: ['MBBS', 'DGO'],
+      role: 'Director – Nightingale Hospital | Senior Functional & Regenerative Gynaecology Consultant',
+      specialty: 'Gynaecology & Obstetrics | Functional & Regenerative Gynaecology | Women’s Wellness | Pelvic Floor Rehabilitation | Preventive Women’s Healthcare',
+      bio: 'Dr. K. Lalitha Reddy is a senior Gynaecologist & Obstetrician with over 32 years of clinical experience in women’s healthcare, pregnancy care, functional gynaecology, and regenerative wellness. She currently serves as the Director of Nightingale Hospital and is actively involved in both clinical care and healthcare leadership, with a strong focus on patient-centric and technology-supported women’s wellness services.',
+      fullBio: 'Her clinical practice combines conventional gynaecological expertise with modern non-surgical and minimally invasive regenerative approaches aimed at improving pelvic wellness, intimate health, post-pregnancy recovery, and quality of life in women across different age groups. She has a special interest in Functional & Regenerative Gynaecology utilizing advanced supportive technologies such as HIFEM and HIFU-based wellness therapies as part of structured pelvic rehabilitation and women’s wellness programs. Dr. Lalitha Reddy’s approach emphasizes confidential, individualized, and function-oriented care, integrating preventive women’s healthcare with modern wellness-focused treatment pathways tailored to each patient’s clinical and lifestyle needs.',
+      clinicalFocus: [
+        'Functional & Regenerative Gynaecology',
+        'Pelvic Floor Rehabilitation',
+        'Women’s Preventive Healthcare',
+        'Menopausal Wellness Support',
+        'Post-Pregnancy Recovery Support',
+        'Non-Surgical Women’s Wellness Therapies',
+        'Hormonal Wellness Support',
+        'Intimate Wellness & Pelvic Health',
+        'High-Risk Pregnancy Care',
+        'Integrative Women’s Wellness Programs'
+      ],
+      conditions: [
+        'Stress Urinary Incontinence Support',
+        'Vaginal Laxity & Pelvic Support Concerns',
+        'Cystocele & Rectocele',
+        'Postmenopausal Dryness & Discomfort',
+        'PCOS / Hormonal Wellness Concerns',
+        'Pelvic Floor Weakness',
+        'Postpartum Recovery Concerns',
+        'Functional Intimate Wellness Issues',
+        'Menopausal Wellness-Related Concerns',
+        'Recurrent White Discharge'
+      ],
+      therapies: [
+        'HIFEM Pelvic Floor Strengthening Programs',
+        'HIFU-Based Women’s Wellness Therapies',
+        'Functional Gynaecology Consultations',
+        'Non-Surgical Pelvic Wellness Programs',
+        'Vaginal Rejuvenation & Wellness Support Procedures',
+        'Vaginoplasty',
+        'Stretch Marks Reduction Procedures',
+        'Warts & Skin Tags Removal',
+        'Preventive Women’s Health Assessments',
+        'Integrative Women’s Wellness Support'
+      ],
+      approach: 'Dr. Lalitha Reddy follows a patient-centric and function-oriented approach focused on improving women’s wellness, pelvic health, comfort, and quality of life through personalized and minimally invasive care pathways. Her philosophy combines traditional gynaecological expertise with regenerative and wellness-focused technologies to support long-term functional health and confidence in women across all stages of life.',
+      experience: '32+ Years'
     },
     {
       name: 'Dr. Srujit Kumar Kaparthy',
@@ -132,6 +202,11 @@ export default function Team() {
                               {i < member.credentials.length - 1 && <span className="text-brand-border">·</span>}
                             </span>
                           ))}
+                          {member.experience && (
+                            <span className="ml-2 px-2 py-0.5 bg-brand-teal/10 text-brand-teal text-[10px] font-mono font-bold rounded-sm uppercase tracking-wider">
+                              {member.experience} Experience
+                            </span>
+                          )}
                         </div>
                         <p className="text-brand-blue font-dm font-semibold text-sm mb-1">{member.role}</p>
                         <p className="text-brand-muted text-xs italic">{member.specialty}</p>
@@ -149,6 +224,18 @@ export default function Team() {
                         <div className="pt-6 mb-6">
                           <p className="text-brand-muted leading-relaxed">{member.bio}</p>
                           {member.fullBio && <p className="text-brand-muted leading-relaxed mt-3">{member.fullBio}</p>}
+                          {member.approach && (
+                            <div className="mt-4 p-5 bg-brand-ice/40 rounded-2xl border border-brand-teal/10">
+                              <h5 className="font-dm font-bold text-brand-teal text-[10px] uppercase tracking-[0.2em] mb-1.5">Approach to Care</h5>
+                              <p className="text-brand-muted text-sm leading-relaxed italic">"{member.approach}"</p>
+                            </div>
+                          )}
+                          {member.note && (
+                            <div className="mt-4 p-5 bg-brand-ice/40 rounded-2xl border border-brand-teal/10">
+                              <h5 className="font-dm font-bold text-brand-teal text-[10px] uppercase tracking-[0.2em] mb-1.5">Founder's Note</h5>
+                              <p className="text-brand-muted text-sm leading-relaxed italic">"{member.note}"</p>
+                            </div>
+                          )}
                         </div>
 
                         <div className="grid md:grid-cols-3 gap-6">
