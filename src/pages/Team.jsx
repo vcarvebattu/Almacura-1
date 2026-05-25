@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
   Activity,
-  ArrowRight,
   Award,
   BadgeCheck,
   ChevronDown,
@@ -49,6 +48,11 @@ const trustFeatures = [
 const founderDoctor = teamMembers[0];
 const specialistDoctors = teamMembers.slice(1);
 const interactiveFocusClasses = 'focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-teal/20 focus-visible:ring-offset-2 focus-visible:ring-offset-white';
+const detailsRevealTransition = {
+  height: { duration: 0.36, ease: [0.22, 1, 0.36, 1] },
+  opacity: { duration: 0.2, ease: 'easeOut' },
+  y: { duration: 0.28, ease: 'easeOut' }
+};
 
 function Eyebrow({ children, className = '' }) {
   return (
@@ -89,8 +93,30 @@ function getMemberId(name) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
 
+function getDoctorPanelIds(memberId) {
+  return {
+    inlinePanelId: `doctor-details-${memberId}-inline`,
+    desktopPanelId: `doctor-details-${memberId}-desktop`
+  };
+}
+
 function getPreviewTags(member, limit = 4) {
   return (member.areas?.length ? member.areas : member.clinicalFocus || []).slice(0, limit);
+}
+
+function DetailsReveal({ id, children, className = '' }) {
+  return (
+    <motion.div
+      id={id}
+      initial={{ height: 0, opacity: 0, y: -8 }}
+      animate={{ height: 'auto', opacity: 1, y: 0 }}
+      exit={{ height: 0, opacity: 0, y: -8 }}
+      transition={detailsRevealTransition}
+      className={`overflow-hidden ${className}`}
+    >
+      {children}
+    </motion.div>
+  );
 }
 
 function CredentialChips({ credentials }) {
@@ -320,12 +346,11 @@ function FounderCard({ founder }) {
 
 function DoctorCard({ member, isOpen, onToggle }) {
   const memberId = getMemberId(member.name);
-  const panelId = `doctor-details-${memberId}`;
+  const { inlinePanelId, desktopPanelId } = getDoctorPanelIds(memberId);
   const previewTags = getPreviewTags(member);
 
   return (
     <motion.article
-      layout
       className="group flex h-full flex-col overflow-hidden rounded-lg border border-brand-border bg-white shadow-[0_16px_45px_rgba(13,33,55,0.07)] transition hover:-translate-y-1 hover:border-brand-teal/40 hover:shadow-[0_22px_60px_rgba(13,33,55,0.12)]"
     >
       <div className="flex flex-1 flex-col p-5 sm:p-7">
@@ -369,36 +394,27 @@ function DoctorCard({ member, isOpen, onToggle }) {
               <button
                 type="button"
                 aria-expanded={isOpen}
-                aria-controls={panelId}
+                aria-controls={`${inlinePanelId} ${desktopPanelId}`}
                 onClick={onToggle}
                 className={`inline-flex min-h-[46px] w-fit items-center justify-center gap-2 rounded-md px-3 text-base font-semibold text-brand-teal transition hover:bg-brand-teal/5 hover:text-brand-blue ${interactiveFocusClasses}`}
               >
                 {isOpen ? 'Hide Details' : 'View Details'}
-                {isOpen ? (
-                  <ChevronDown size={18} className="rotate-180 transition-transform" aria-hidden="true" />
-                ) : (
-                  <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                )}
+                <ChevronDown size={18} className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            id={panelId}
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="overflow-hidden"
-          >
-            <DoctorDetails member={member} />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div className="lg:hidden">
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <DetailsReveal id={inlinePanelId}>
+              <DoctorDetails member={member} />
+            </DetailsReveal>
+          )}
+        </AnimatePresence>
+      </div>
     </motion.article>
   );
 }
@@ -421,6 +437,16 @@ export default function Team() {
       return matchesSearch && matchesFilter(member, activeFilter);
     });
   }, [activeFilter, searchTerm]);
+
+  const doctorRows = useMemo(() => {
+    const rows = [];
+
+    for (let index = 0; index < filteredDoctors.length; index += 2) {
+      rows.push(filteredDoctors.slice(index, index + 2));
+    }
+
+    return rows;
+  }, [filteredDoctors]);
 
   const schema = useMemo(() => ({
     '@context': 'https://schema.org',
@@ -540,22 +566,43 @@ export default function Team() {
           </ScrollReveal>
 
           {filteredDoctors.length > 0 ? (
-            <div className="grid items-stretch gap-6 lg:grid-cols-2">
-              {filteredDoctors.map((member, index) => {
-                const memberId = getMemberId(member.name);
+            <div className="space-y-6">
+              {doctorRows.map((row, rowIndex) => {
+                const expandedMember = row.find((member) => getMemberId(member.name) === expandedDoctor);
+                const expandedMemberId = expandedMember ? getMemberId(expandedMember.name) : null;
+                const desktopPanelId = expandedMemberId ? getDoctorPanelIds(expandedMemberId).desktopPanelId : null;
 
                 return (
-                  <ScrollReveal
-                    key={member.name}
-                    delay={index * 0.04}
-                    className={`h-full transition-[grid-column] duration-300 ${expandedDoctor === memberId ? 'lg:col-span-2' : ''}`}
-                  >
-                    <DoctorCard
-                      member={member}
-                      isOpen={expandedDoctor === memberId}
-                      onToggle={() => setExpandedDoctor((current) => (current === memberId ? null : memberId))}
-                    />
-                  </ScrollReveal>
+                  <div key={row.map((member) => member.name).join('|')} className="space-y-6">
+                    <div className="grid items-stretch gap-6 lg:grid-cols-2">
+                      {row.map((member, rowOffset) => {
+                        const memberId = getMemberId(member.name);
+                        const index = rowIndex * 2 + rowOffset;
+
+                        return (
+                          <ScrollReveal key={member.name} delay={index * 0.04} className="h-full">
+                            <DoctorCard
+                              member={member}
+                              isOpen={expandedDoctor === memberId}
+                              onToggle={() => setExpandedDoctor((current) => (current === memberId ? null : memberId))}
+                            />
+                          </ScrollReveal>
+                        );
+                      })}
+                    </div>
+
+                    <AnimatePresence initial={false} mode="wait">
+                      {expandedMember && desktopPanelId && (
+                        <DetailsReveal
+                          key={desktopPanelId}
+                          id={desktopPanelId}
+                          className="hidden rounded-lg border border-brand-border bg-white shadow-[0_18px_48px_rgba(13,33,55,0.08)] lg:block"
+                        >
+                          <DoctorDetails member={expandedMember} />
+                        </DetailsReveal>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 );
               })}
             </div>
