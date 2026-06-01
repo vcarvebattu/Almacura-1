@@ -204,27 +204,24 @@ export default function Home() {
 
           {/* Responsive Timeline */}
           <div className="relative mt-16 mb-10 max-w-6xl mx-auto">
-            <div className="flex flex-wrap justify-center gap-y-12 gap-x-4 md:gap-x-6">
+            {/* Connector line */}
+            <div className="hidden lg:block absolute top-8 left-[6%] right-[6%] h-px bg-gradient-to-r from-transparent via-brand-gold/30 to-transparent" />
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-6">
               {['Assessment', 'Diagnosis', 'Integrative Treatment', 'Restoration', 'Regeneration', 'Optimization', 'Healthspan'].map((step, index) => (
-                <motion.div 
+                <motion.div
+                  key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  key={index} 
-                  className="flex items-center gap-4 md:gap-6 group"
+                  transition={{ delay: index * 0.08, duration: 0.5 }}
+                  className="flex flex-col items-center text-center group"
                 >
-                  <div className="flex flex-col items-center text-center w-[120px]">
-                    <div className="w-12 h-12 rounded-full border border-brand-gold/30 flex items-center justify-center bg-white/5 backdrop-blur-sm group-hover:border-brand-gold transition-colors duration-300 mb-4 shadow-lg shadow-brand-gold/5">
-                       <div className="w-2.5 h-2.5 rounded-full bg-brand-gold group-hover:scale-150 transition-transform duration-300"></div>
-                    </div>
-                    <span className="font-dm text-[11px] font-bold tracking-[0.2em] uppercase text-white">
-                      {step}
-                    </span>
+                  <div className="relative w-16 h-16 rounded-full border border-brand-gold/30 bg-white/5 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:border-brand-gold group-hover:bg-white/10 transition-all duration-300 shadow-lg shadow-brand-gold/5 z-10">
+                    <span className="font-cormorant text-brand-gold font-bold text-xl">{index + 1}</span>
                   </div>
-                  {index < 6 && (
-                    <ArrowRight className="w-5 h-5 text-white/20 hidden md:block -mt-8" />
-                  )}
+                  <span className="font-dm text-[10px] font-bold tracking-[0.2em] uppercase text-white/80 group-hover:text-white transition-colors leading-relaxed">
+                    {step}
+                  </span>
                 </motion.div>
               ))}
             </div>
@@ -409,6 +406,18 @@ export default function Home() {
                 </Link>
               </motion.div>
             ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <Link to="/therapies">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-white/10 text-white border border-white/20 rounded-full font-dm font-bold text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-brand-navy transition-all inline-flex items-center gap-3"
+              >
+                View All Therapies <ArrowRight className="w-4 h-4" />
+              </motion.button>
+            </Link>
           </div>
         </div>
       </section>
