@@ -1,22 +1,57 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Activity, ArrowRight, Atom, Lightbulb, Shield, ShieldAlert, Sparkles, Syringe, Waves, Wind, Zap } from 'lucide-react';
+import {
+  Wind,           // HBOT - oxygen/air
+  Flame,          // Ozone - reactive/energetic
+  Droplets,       // IV Therapy - liquid/drip
+  Atom,           // Hydrogen - molecular
+  Sun,            // Red Light - light/photon
+  Crosshair,      // Acupuncture - precision points
+  Magnet,         // HIFEM - electromagnetic
+  Waves,          // HIFU - ultrasound waves
+  HeartPulse,     // EECP - cardiac/pulse
+  Sparkles,       // PRP - regenerative/platelet
+  ShieldOff,      // DSCB - pain block
+  Thermometer,    // Infrared Sauna - heat
+  Leaf,           // Yoga - natural/wellness
+  Activity,       // fallback
+  ArrowRight
+} from 'lucide-react';
 
 const iconMap = {
+  // Legacy keys kept for backward compat
   Activity,
   Atom,
-  Lightbulb,
-  Shield,
-  ShieldAlert,
+  Lightbulb: Sun,
+  Shield: ShieldOff,
+  ShieldAlert: Crosshair,
   Sparkles,
-  Syringe,
+  Syringe: Droplets,
   Waves,
   Wind,
-  Zap
+  Zap: HeartPulse,
+  Flame,
+  Leaf,
+
+  // Therapy-specific by slug
+  hbot: Wind,
+  ozone: Flame,
+  'iv-therapy': Droplets,
+  hydrogen: Atom,
+  'red-light': Sun,
+  acupuncture: Crosshair,
+  hifem: Magnet,
+  hifu: Waves,
+  eecp: HeartPulse,
+  prp: Sparkles,
+  dscb: ShieldOff,
+  'infrared-sauna': Thermometer,
+  yoga: Leaf,
 };
 
 export default function TherapyCard({ icon, title, description, slug, sessionDuration }) {
-  const Icon = iconMap[icon] || Activity;
+  // Prefer slug-based icon, then string-based, then fallback
+  const Icon = iconMap[slug] || iconMap[icon] || Activity;
 
   return (
     <Link to={`/therapies/${slug}`} aria-label={`View details for ${title}`} className="block h-full">
@@ -27,7 +62,7 @@ export default function TherapyCard({ icon, title, description, slug, sessionDur
         <div className="absolute left-0 top-0 h-full w-1 bg-brand-teal scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>
         
         <div className="mb-5 text-brand-teal bg-brand-ice w-14 h-14 rounded-xl flex items-center justify-center group-hover:bg-brand-teal group-hover:text-white transition-all duration-300">
-          <Icon size={32} strokeWidth={1.5} />
+          <Icon size={28} strokeWidth={1.5} />
         </div>
         
         <h3 className="font-cormorant text-2xl text-brand-navy mb-3 leading-tight">{title}</h3>

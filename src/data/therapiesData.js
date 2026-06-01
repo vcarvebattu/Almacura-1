@@ -2,7 +2,7 @@ export const therapiesData = {
   hbot: {
     title: "Hyperbaric Oxygen Therapy (HBOT)",
     subtitle: "Enhanced tissue oxygenation under pressure",
-    img: "/therapy-hbot.png",
+    img: "/therapy-hbot.jpg",
     description: "Breathing pure oxygen in a pressurized chamber to enhance tissue oxygenation.",
     sessionDuration: "60-90 minutes",
     typicalCourse: "20-40 sessions",
@@ -40,7 +40,7 @@ export const therapiesData = {
   ozone: {
     title: "Ozone Therapy",
     subtitle: "Medical ozone for oxygen metabolism enhancement",
-    img: "/therapy-ozone.png",
+    img: "/therapy-ozone.jpg",
     description: "Use of medical-grade ozone to stimulate the immune system and improve oxygen delivery.",
     sessionDuration: "30-45 minutes",
     typicalCourse: "10-20 sessions",
@@ -76,7 +76,7 @@ export const therapiesData = {
   'iv-therapy': {
     title: "IV Nutrient Therapy",
     subtitle: "Direct cellular nourishment",
-    img: "/therapy-hydrogen.png",
+    img: "/therapy-iv.jpg",
     description: "Intravenous administration of vitamins, minerals, and antioxidants for maximum absorption.",
     sessionDuration: "45-60 minutes",
     typicalCourse: "Weekly or bi-weekly",
@@ -111,7 +111,7 @@ export const therapiesData = {
   hydrogen: {
     title: "Hydrogen Therapy",
     subtitle: "Selective antioxidant for oxidative stress reduction",
-    img: "/therapy-hydrogen.png",
+    img: "/therapy-hydrogen.jpg",
     description: "Inhalation of molecular hydrogen gas to neutralize harmful free radicals.",
     sessionDuration: "30-60 minutes",
     typicalCourse: "20-40 sessions",
@@ -142,7 +142,7 @@ export const therapiesData = {
   'red-light': {
     title: "Red Light Therapy",
     subtitle: "Mitochondrial energy optimization",
-    img: "/therapy-redlight.png",
+    img: "/therapy-redlight.jpg",
     description: "Exposing the body to low-level red and near-infrared light to stimulate cellular energy.",
     sessionDuration: "20-30 minutes",
     typicalCourse: "10-20 sessions",
@@ -175,7 +175,7 @@ export const therapiesData = {
   acupuncture: {
     title: "Acupuncture",
     subtitle: "Balancing energy and biological systems",
-    img: "/therapy-pain.png",
+    img: "/therapy-acupuncture.jpg",
     description: "Traditional practice of inserting thin needles at specific points to balance the body's flow of energy (Qi).",
     sessionDuration: "45-60 minutes",
     typicalCourse: "6-10 sessions",
@@ -210,7 +210,7 @@ export const therapiesData = {
   hifem: {
     title: "HIFEM - Pelvic Chair Therapy",
     subtitle: "High-Intensity Focused Electromagnetic Technology",
-    img: "/therapy-gynaecology.png",
+    img: "/therapy-hifem.jpg",
     description: "A non-invasive procedure for pelvic floor strengthening and urinary incontinence treatment.",
     sessionDuration: "28 minutes",
     typicalCourse: "6 sessions (twice weekly)",
@@ -247,7 +247,7 @@ export const therapiesData = {
   hifu: {
     title: "HIFU - Women Wellness Therapy",
     subtitle: "High-Intensity Focused Ultrasound for Restoration",
-    img: "/therapy-gynaecology.png",
+    img: "/therapy-hifu.jpg",
     description: "Advanced non-surgical ultrasonic technology for vaginal rejuvenation and tissue tightening.",
     sessionDuration: "30-45 minutes",
     typicalCourse: "1-3 sessions",
@@ -284,7 +284,7 @@ export const therapiesData = {
   eecp: {
     title: "EECP Therapy",
     subtitle: "Enhanced External Counter Pulsation",
-    img: "/therapy-eecp.png",
+    img: "/therapy-eecp.jpg",
     description: "A non-invasive treatment that improves blood flow to the heart and systemic circulation.",
     sessionDuration: "60 minutes",
     typicalCourse: "35 sessions (daily)",
@@ -321,7 +321,7 @@ export const therapiesData = {
   prp: {
     title: "PRP Therapy",
     subtitle: "Platelet-rich plasma for regenerative support",
-    img: "/therapy-prp.png",
+    img: "/therapy-prp.jpg",
     description: "A regenerative protocol using concentrated platelets and growth factors from the patient's own blood to support tissue repair.",
     sessionDuration: "30-60 minutes",
     typicalCourse: "3-6 sessions",
@@ -358,7 +358,7 @@ export const therapiesData = {
   dscb: {
     title: "DSCB - Pain Management Therapies",
     subtitle: "Deep Spinal & Cellular Blockade",
-    img: "/therapy-pain.png",
+    img: "/therapy-dscb.jpg",
     description: "Advanced clinical protocols for managing chronic and acute pain through localized neuro-modulation.",
     sessionDuration: "30-60 minutes",
     typicalCourse: "As per clinical evaluation",
@@ -395,7 +395,7 @@ export const therapiesData = {
   yoga: {
     title: "Regenerative Yoga Therapy",
     subtitle: "Clinical yoga for physiological regulation and stress management",
-    img: "/therapy-pain.png",
+    img: "/therapy-yoga.jpg",
     description: "Yoga therapy at ALMACURA is not fitness — it is a clinical tool for physiological regulation, stress management, and long-term functional recovery.",
     sessionDuration: "45-60 minutes",
     typicalCourse: "Ongoing / as prescribed",
@@ -431,7 +431,7 @@ export const therapiesData = {
   'infrared-sauna': {
     title: "Infrared Sauna",
     subtitle: "Deep thermal heat for cellular detoxification & recovery",
-    img: "/therapy-sauna.png",
+    img: "/therapy-sauna.jpg",
     description: "Exposing the body to infrared heat wavelengths to stimulate circulation, promote detoxification, and support cellular repair.",
     sessionDuration: "30-45 minutes",
     typicalCourse: "2-3 times per week",

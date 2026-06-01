@@ -379,14 +379,14 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { name: 'Hyperbaric Oxygen Therapy (HBOT)', img: '/therapy-hbot.png', slug: 'hbot' },
-              { name: 'EECP Therapy', img: '/therapy-eecp.png', slug: 'eecp' },
-              { name: 'Ozone Therapy', img: '/therapy-ozone.png', slug: 'ozone' },
-              { name: 'HIFEM - Pelvic Chair', img: '/therapy-gynaecology.png', slug: 'hifem' },
-              { name: 'HIFU - Women Wellness', img: '/therapy-gynaecology.png', slug: 'hifu' },
-              { name: 'PRP Therapy', img: '/therapy-prp.png', slug: 'prp' },
-              { name: 'DSCB - Pain Management', img: '/therapy-pain.png', slug: 'dscb' },
-              { name: 'Hydrogen Therapy', img: '/therapy-hydrogen.png', slug: 'hydrogen' }
+              { name: 'Hyperbaric Oxygen Therapy (HBOT)', img: '/therapy-hbot.jpg', slug: 'hbot' },
+              { name: 'EECP Therapy', img: '/therapy-eecp.jpg', slug: 'eecp' },
+              { name: 'Ozone Therapy', img: '/therapy-ozone.jpg', slug: 'ozone' },
+              { name: 'HIFEM - Pelvic Chair', img: '/therapy-hifem.jpg', slug: 'hifem' },
+              { name: 'HIFU - Women Wellness', img: '/therapy-hifu.jpg', slug: 'hifu' },
+              { name: 'PRP Therapy', img: '/therapy-prp.jpg', slug: 'prp' },
+              { name: 'DSCB - Pain Management', img: '/therapy-dscb.jpg', slug: 'dscb' },
+              { name: 'Hydrogen Therapy', img: '/therapy-hydrogen.jpg', slug: 'hydrogen' }
             ].map((therapy, i) => (
               <motion.div 
                 key={i}
@@ -516,3 +516,5 @@ export default function Home() {
     </main>
   );
 }
+
+

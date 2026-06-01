@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 
 const Home = lazy(() => import('./pages/Home'));
-const About = lazy(() => import('./pages/Founder'));
+const About = lazy(() => import('./pages/About'));
 const Programs = lazy(() => import('./pages/Programs'));
 const Therapies = lazy(() => import('./pages/Therapies'));
 const FunctionalGynaecology = lazy(() => import('./pages/FunctionalGynaecology'));
@@ -95,7 +95,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/founder" element={<About />} />
+            <Route path="/founder" element={<Founder />} />
             <Route path="/programs" element={<Programs />} />
             <Route path="/clinical-programs" element={<Programs />} />
             <Route path="/therapies" element={<Therapies />} />
@@ -106,7 +106,6 @@ function App() {
             <Route path="/longevity" element={<Longevity />} />
             <Route path="/diagnostics" element={<Diagnostics />} />
             <Route path="/nutrition" element={<Nutrition />} />
-            <Route path="/founder" element={<Founder />} />
             <Route path="/team" element={<Team />} />
             <Route path="/meet-our-specialists" element={<Team />} />
             <Route path="/for-doctors" element={<ForDoctors />} />
