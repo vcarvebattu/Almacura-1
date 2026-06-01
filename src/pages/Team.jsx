@@ -492,7 +492,7 @@ export default function Team() {
 
           <div className="mt-10 grid gap-3 sm:grid-cols-3">
             {[
-              `${teamMembers.length} clinical experts`,
+              'Clinical experts',
               'Multidisciplinary care',
               'Personalized pathways'
             ].map((item) => (

@@ -1,4 +1,4 @@
-export const therapiesData = {
+﻿export const therapiesData = {
   hbot: {
     title: "Hyperbaric Oxygen Therapy (HBOT)",
     subtitle: "Enhanced tissue oxygenation under pressure",
@@ -356,8 +356,8 @@ export const therapiesData = {
     relatedTherapies: ['red-light', 'dscb', 'iv-therapy']
   },
   dscb: {
-    title: "DSCB - Pain Management Therapies",
-    subtitle: "Deep Spinal & Cellular Blockade",
+    title: "DSCB - Distal Sodium Channel Block (Pain Portal Block)",
+    subtitle: "Distal Sodium Channel Block — minimally invasive pain portal block therapy",
     img: "/therapy-dscb.jpg",
     description: "Advanced clinical protocols for managing chronic and acute pain through localized neuro-modulation.",
     sessionDuration: "30-60 minutes",
@@ -532,7 +532,7 @@ export const therapyList = [
   {
     slug: 'dscb',
     icon: 'Shield',
-    title: 'DSCB - Pain Management',
+    title: 'DSCB - Pain Portal Block',
     shortDescription: 'Precision clinical blocks for managing chronic pain and restoring mobility.'
   },
   {
@@ -548,3 +548,5 @@ export const therapyList = [
     shortDescription: 'Deep thermal heat for cellular detoxification, cardiovascular efficiency, and muscle recovery.'
   }
 ];
+
+

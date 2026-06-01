@@ -114,10 +114,10 @@ export default function Longevity() {
           <ScrollReveal>
             <SectionLabel>VITALITY & LONGEVITY</SectionLabel>
             <h1 className="font-cormorant text-6xl md:text-8xl mb-8">
-              <span className="text-brand-navy leading-tight">Healthspan <br className="md:hidden" /> Optimization</span>
+              <span className="text-brand-navy leading-tight">Longevity <br className="md:hidden" /> Protocol</span>
             </h1>
             <p className="text-brand-muted text-lg md:text-xl font-dm italic leading-relaxed max-w-2xl mx-auto border-l-2 border-brand-teal pl-6">
-              Focusing on improving the number of years lived in good health, vitality, and independence through early detection and metabolic optimization.
+              A structured clinical protocol combining advanced regenerative therapies to slow biological aging, restore cellular function, and extend years of optimal health and vitality.
             </p>
           </ScrollReveal>
         </div>

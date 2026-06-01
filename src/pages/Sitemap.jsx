@@ -1,50 +1,60 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ChevronRight, Layout, Activity, Heart, Users, FileText, Globe } from 'lucide-react';
+import { ChevronRight, Activity, Heart, Users, FileText, Globe } from 'lucide-react';
 
 const sitemapData = [
   {
-    title: "Core Navigation",
+    title: "About & Contact",
     icon: <Globe className="w-5 h-5" />,
     links: [
       { name: "Home", path: "/" },
       { name: "About the Institute", path: "/about" },
-      { name: "Meet Our Specialists", path: "/team" },
       { name: "Our Founder", path: "/founder" },
-      { name: "Clinical Programs", path: "/programs" },
+      { name: "Meet Our Specialists", path: "/team" },
+      { name: "For Doctors & Referrals", path: "/for-doctors" },
       { name: "Contact & Appointments", path: "/contact" }
     ]
   },
   {
-    title: "Clinical Hub",
+    title: "Clinical Programs",
     icon: <Activity className="w-5 h-5" />,
     links: [
+      { name: "All Programs", path: "/programs" },
       { name: "Integrative Medicine", path: "/integrative-medicine" },
       { name: "Healthspan Optimization", path: "/healthspan-optimization" },
       { name: "Functional Gynaecology", path: "/functional-gynaecology" },
-      { name: "Advanced Therapeutic Modalities", path: "/therapies" }
+      { name: "Longevity Protocol", path: "/longevity" },
+      { name: "Diagnostics", path: "/diagnostics" },
+      { name: "Nutrition", path: "/nutrition" }
     ]
   },
   {
-    title: "Therapeutic Modalities",
+    title: "Therapies",
     icon: <Heart className="w-5 h-5" />,
     links: [
-      { name: "HBOT (Oxygen Therapy)", path: "/therapies/hbot" },
-      { name: "EECP (Heart Health)", path: "/therapies/eecp" },
-      { name: "IV Nutrition", path: "/therapies/iv-therapy" },
+      { name: "All Therapies", path: "/therapies" },
+      { name: "HBOT — Oxygen Therapy", path: "/therapies/hbot" },
+      { name: "EECP — Heart Health", path: "/therapies/eecp" },
+      { name: "IV Nutrient Therapy", path: "/therapies/iv-therapy" },
       { name: "Ozone Therapy", path: "/therapies/ozone" },
+      { name: "Hydrogen Therapy", path: "/therapies/hydrogen" },
+      { name: "Red Light Therapy", path: "/therapies/red-light" },
+      { name: "Acupuncture", path: "/therapies/acupuncture" },
       { name: "PRP Therapy", path: "/therapies/prp" },
       { name: "HIFEM Pelvic Chair", path: "/therapies/hifem" },
       { name: "HIFU Women Wellness", path: "/therapies/hifu" },
-      { name: "Pain Management", path: "/therapies/dscb" }
+      { name: "DSCB Pain Portal Block", path: "/therapies/dscb" },
+      { name: "Regenerative Yoga", path: "/therapies/yoga" },
+      { name: "Infrared Sauna", path: "/therapies/infrared-sauna" }
     ]
   },
   {
     title: "Resources & Legal",
     icon: <FileText className="w-5 h-5" />,
     links: [
-      { name: "Frequently Asked Questions", path: "/faq" },
-      { name: "For Doctors & Referrals", path: "/for-doctors" },
+      { name: "FAQs", path: "/faq" },
+      { name: "Blog", path: "/blog" },
+      { name: "Testimonials", path: "/testimonials" },
       { name: "Medical Disclaimer", path: "/disclaimer" },
       { name: "Privacy Policy", path: "/privacy" },
       { name: "Terms of Treatment", path: "/terms" }

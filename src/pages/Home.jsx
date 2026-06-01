@@ -385,7 +385,7 @@ export default function Home() {
               { name: 'HIFEM - Pelvic Chair', img: '/therapy-hifem.jpg', slug: 'hifem' },
               { name: 'HIFU - Women Wellness', img: '/therapy-hifu.jpg', slug: 'hifu' },
               { name: 'PRP Therapy', img: '/therapy-prp.jpg', slug: 'prp' },
-              { name: 'DSCB - Pain Management', img: '/therapy-dscb.jpg', slug: 'dscb' },
+              { name: 'DSCB - Pain Portal Block', img: '/therapy-dscb.jpg', slug: 'dscb' },
               { name: 'Hydrogen Therapy', img: '/therapy-hydrogen.jpg', slug: 'hydrogen' }
             ].map((therapy, i) => (
               <motion.div 
@@ -516,5 +516,6 @@ export default function Home() {
     </main>
   );
 }
+
 
 

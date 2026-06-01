@@ -42,7 +42,7 @@ export default function TherapyDetail() {
             <div className="flex flex-col items-center gap-2 mb-8">
               <SectionLabel>CLINICAL PROTOCOL</SectionLabel>
             </div>
-            <h1 className="font-dm text-[clamp(44px,8vw,86px)] leading-[0.95] text-brand-navy font-bold tracking-tight mb-8">
+            <h1 className="font-dm text-3xl sm:text-4xl md:text-5xl leading-tight text-brand-navy font-bold tracking-tight mb-8">
               {therapy.title}
             </h1>
             <p className="text-brand-muted text-xl sm:text-2xl leading-relaxed italic max-w-2xl mx-auto font-cormorant mt-6 mb-12">

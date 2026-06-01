@@ -26,7 +26,7 @@ export default function FunctionalGynaecology() {
   };
 
   return (
-    <main className="w-full overflow-hidden bg-brand-beige">
+    <main className="w-full overflow-hidden bg-brand-white">
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center pt-40 pb-20">
         {/* Soft elegant background */}
@@ -36,7 +36,7 @@ export default function FunctionalGynaecology() {
             alt="Women's wellness and elegant consultation" 
             className="w-full h-full object-cover object-center opacity-70"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-beige via-brand-beige/90 to-brand-beige/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-white via-brand-white/90 to-brand-white/40"></div>
         </div>
 
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8 relative z-10 w-full">
@@ -103,7 +103,7 @@ export default function FunctionalGynaecology() {
               <motion.div 
                 variants={itemFadeIn}
                 key={i} 
-                className="bg-brand-light/50 border border-brand-teal/10 rounded-[2rem] p-8 text-center hover:bg-white hover:shadow-xl hover:shadow-brand-teal/5 transition-all duration-500 group"
+                className="bg-brand-ice border border-brand-teal/10 rounded-[2rem] p-8 text-center hover:bg-white hover:shadow-xl hover:shadow-brand-teal/5 transition-all duration-500 group"
               >
                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-brand-teal/50 group-hover:text-brand-teal shadow-sm transition-colors">
                   <area.icon className="w-8 h-8" />
@@ -178,7 +178,7 @@ export default function FunctionalGynaecology() {
                   { id: 'hormonal', title: 'Hormonal & Metabolic Optimization', desc: 'Comprehensive balancing for systemic wellness and stage-specific support.', path: '/contact' },
                   { id: 'prp', title: 'PRP-Based Procedures', desc: 'Utilising your body\'s own growth factors for tissue repair.', path: '/therapies/prp' }
                 ].map((therapy, i) => (
-                  <li id={therapy.id} key={therapy.id} className="scroll-mt-36 flex items-start gap-4 p-4 rounded-2xl bg-brand-light/50 border border-brand-teal/5 hover:border-brand-teal/20 transition-colors">
+                  <li id={therapy.id} key={therapy.id} className="scroll-mt-36 flex items-start gap-4 p-4 rounded-2xl bg-brand-ice border border-brand-teal/5 hover:border-brand-teal/20 transition-colors">
                     <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 shadow-sm">
                       <div className="w-2 h-2 bg-brand-teal rounded-full"></div>
                     </div>
@@ -214,3 +214,5 @@ export default function FunctionalGynaecology() {
     </main>
   );
 }
+
+

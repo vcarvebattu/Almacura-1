@@ -38,7 +38,7 @@ export default function Contact() {
   };
 
   return (
-    <main className="w-full pt-32 pb-24 min-h-screen bg-brand-beige">
+    <main className="w-full pt-32 pb-24 min-h-screen bg-brand-white">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
         
         <motion.div 
@@ -62,7 +62,7 @@ export default function Contact() {
           
           {/* Contact Info & CTAs */}
           <motion.div {...fadeInUp} className="space-y-12">
-            <div className="bg-white rounded-[2.5rem] p-10 border border-brand-teal/10 shadow-sm">
+            <div className="bg-brand-ice rounded-[2.5rem] p-10 border border-brand-teal/10 shadow-sm">
               <h3 className="font-cormorant text-3xl font-bold text-brand-navy mb-8">Clinic Information</h3>
               
               <div className="space-y-8">
@@ -211,7 +211,7 @@ export default function Contact() {
         {/* Printables & QR Codes Section */}
         <motion.div 
           {...fadeInUp}
-          className="mt-20 bg-white rounded-[2.5rem] p-10 border border-brand-teal/10 shadow-sm"
+          className="mt-20 bg-brand-ice rounded-[2.5rem] p-10 border border-brand-teal/10 shadow-sm"
         >
           <div className="max-w-3xl">
             <span className="font-dm text-[11px] font-bold tracking-[0.3em] text-brand-teal uppercase mb-2 block">
@@ -225,8 +225,8 @@ export default function Contact() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Website QR Card */}
-            <div className="bg-brand-beige/50 p-8 rounded-3xl border border-brand-teal/5 flex flex-col md:flex-row items-center gap-6">
-              <div className="w-36 h-36 bg-white p-3 rounded-2xl shadow-md border border-brand-teal/10 flex items-center justify-center shrink-0">
+            <div className="bg-brand-white p-8 rounded-3xl border border-brand-teal/10 flex flex-col md:flex-row items-center gap-6">
+              <div className="w-36 h-36 bg-brand-ice p-3 rounded-2xl shadow-md border border-brand-teal/10 flex items-center justify-center shrink-0">
                 <img src="/qr-website.png" alt="ALMACURA Website QR Code" className="w-full h-full object-contain" />
               </div>
               <div className="flex-1 text-center md:text-left">
@@ -245,8 +245,8 @@ export default function Contact() {
             </div>
 
             {/* Location QR Card */}
-            <div className="bg-brand-beige/50 p-8 rounded-3xl border border-brand-teal/5 flex flex-col md:flex-row items-center gap-6">
-              <div className="w-36 h-36 bg-white p-3 rounded-2xl shadow-md border border-brand-teal/10 flex items-center justify-center shrink-0">
+            <div className="bg-brand-white p-8 rounded-3xl border border-brand-teal/10 flex flex-col md:flex-row items-center gap-6">
+              <div className="w-36 h-36 bg-brand-ice p-3 rounded-2xl shadow-md border border-brand-teal/10 flex items-center justify-center shrink-0">
                 <img src="/qr-location.png" alt="ALMACURA Location QR Code" className="w-full h-full object-contain" />
               </div>
               <div className="flex-1 text-center md:text-left">

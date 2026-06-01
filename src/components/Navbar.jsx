@@ -25,7 +25,7 @@ const navLinks = [
       { name: 'HIFEM Pelvic Chair', path: '/therapies/hifem' },
       { name: 'HIFU Women Wellness', path: '/therapies/hifu' },
       { name: 'PRP Therapy', path: '/therapies/prp' },
-      { name: 'DSCB Pain Management', path: '/therapies/dscb' },
+      { name: 'DSCB Pain Portal Block', path: '/therapies/dscb' },
       { name: 'Regenerative Yoga', path: '/therapies/yoga' },
       { name: 'View All Therapies', path: '/therapies' }
     ]
@@ -333,3 +333,4 @@ export default function Navbar() {
     </>
   );
 }
+
